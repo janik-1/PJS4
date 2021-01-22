@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALzLILDkHwdwf329UP52E-UnzyDJJ0tNQ&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALzLILDkHwdwf329UP52E-UnzyDJJ0tNQ&callback=initMap&libraries=places&v=weekly"
       defer
     ></script>
     <style type="text/css">
@@ -20,20 +21,53 @@
     </style>
     <script>
       // Initialize and add the map
-      function initMap() {
-        // The location of Uluru
-        const uluru = { lat: -25.344, lng: 131.036 };
-        // The map, centered at Uluru
+    //   function initMap() {
+        // // The location of Uluru
+        // const uluru = { lat: -25.344, lng: 131.036 };
+        // // The map, centered at Uluru
+        // const map = new google.maps.Map(document.getElementById("map"), {
+        //   zoom: 4,
+        //   center: uluru,
+        // });
+        // // The marker, positioned at Uluru
+        // const marker = new google.maps.Marker({
+        //   position: uluru,
+        //   map: map,
+        // });
+    //   }
+    function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: uluru,
+          center: { lat: -33.866, lng: 151.196 },
+          zoom: 15,
         });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
+        const request = {
+          placeId: "ChIJN1t_tDeuEmsRUsoyG83frY4",
+          fields: ["name", "formatted_address", "place_id", "geometry"],
+        };
+        const infowindow = new google.maps.InfoWindow();
+        const service = new google.maps.places.PlacesService(map);
+        service.getDetails(request, (place, status) => {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            const marker = new google.maps.Marker({
+              map,
+              position: place.geometry.location,
+            });
+            google.maps.event.addListener(marker, "click", function () {
+              infowindow.setContent(
+                "<div><strong>" +
+                  place.name +
+                  "</strong><br>" +
+                  "Place ID: " +
+                  place.place_id +
+                  "<br>" +
+                  place.formatted_address +
+                  "</div>"
+              );
+              infowindow.open(map, this);
+            });
+          }
         });
-      }
+    };
     </script>
 </head>
 <body>

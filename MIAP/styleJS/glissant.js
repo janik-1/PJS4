@@ -1,4 +1,9 @@
-    let myLogo = document.getElementById('myLogo');
-    document.getElementById('myButton').onload = function(){
-        myLogo.classList.toggle('fade');
+window.onload = function() {
+    const ball= document.getElementsByTagName("div");
+    for (div of ball) {
+        div.style.marginLeft = "300px";
+    
     }
+
+  }
+  

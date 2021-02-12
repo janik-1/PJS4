@@ -1,0 +1,27 @@
+body {
+    background-color: bisque;
+}
+
+div {
+    color : #f49032;
+}
+
+h1 {
+    color:#fc3677;
+    text-align: center;
+}
+
+.ball {
+    margin-top: 50px;
+    margin-left: -300px;
+    width: 60%;
+    height: 50%;
+    background-color: transparent;
+    border-radius: 100px;
+    transition: 2s;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+
+

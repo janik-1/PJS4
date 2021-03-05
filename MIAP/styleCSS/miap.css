@@ -38,12 +38,13 @@ h1:hover {
     color : white;
 }
 
-.navbar .navbar-collapse .navlink:hover{
-    color : white;
-}
-
 .navbar .navbar-collapse .dropdown-menu{
     background:linear-gradient(deeppink,orange);
 }
+
+.navbar .navbar-collapse .navlink:hover .dropdown-menu{
+    background:linear-gradient(deeppink,orange);
+}
+
 
 

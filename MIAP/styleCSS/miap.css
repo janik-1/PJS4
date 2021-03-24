@@ -7,6 +7,7 @@ div {
 }
 
 h1 {
+
     color:#fc3677;
     text-align: center;
 }
@@ -16,7 +17,7 @@ h1:hover {
     transition : 1s;
 }
 
-.ball {
+/*.ball {
     margin-top: 50px;
     margin-left: -300px;
     width: 60%;
@@ -26,11 +27,11 @@ h1:hover {
     transition: 2s;
     line-height: 40px;
     text-align: center;
-}
+}*/
 
 .navbar{
     background: linear-gradient(deeppink,orange);
-
+    font-size: 15px;
 }
 
 .navbar .navbar-collapse .navlink{
@@ -97,6 +98,13 @@ h1:hover {
     background-color: #0062cc;
     border: none;
     cursor: pointer;
+}
+
+#btnLangue{
+    background-color: transparent;
+    border-style: none;
+    padding-top: 7px;
+    height: 5px;
 }
 
 

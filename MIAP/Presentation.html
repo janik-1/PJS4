@@ -4,25 +4,59 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Miap</title>
-
-        <script src="./styleJS/glissant.js" type="text/javascript">
-        </script>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js%22%3E"></script>
        <!-- CSS only -->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js%22%3E"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
        <link rel="stylesheet" type="text/css" href="styleCSS/miap.css" />
 
     </head>
-    <header>
-        <div class="text-center">
-            <img class="img-fluid" src="image/aVenir.png" alt="logo" style="width:300px;">
-        </div>
-    </br>
-    </header>
-    <body style="background-color: bisque;">
- 
 
+    <body>
+
+    <div class="navbar navbar-default" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-header">
+                        <!-- <img id="myLogo" class="img-fluid" src="image/aVenir.png"> A changer pour le logo-->
+                        <li class="active"><a href="#">LOGO</a></li>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li><a class="navlink" href="#">Accueil</a></li>
+                            <li><a class="navlink" href="#">Présentation</a></li>
+                            <li><a class="navlink" href="#" >Notre équipe</a></li>
+                            <li><a class="navlink" href="#" class="dropdown-toggle" data-toggle="dropdown">Articles<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="navdrop" href="#">About One</a></li> <!-- Mettre des liens vers des faux articles de journaux-->
+                                    <li><a class="navdrop" href="#">About Two</a></li>
+                                </ul></li>
+                            <li><a class="navlink" href="#">Aide</a></li>
+                            <li><a class="navlink" href="#">Nous contacter</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>   A mettre lorsque la personne sera connectée -->
+                            <li>
+                                <button id="btnLangue"><img src=https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/globe2.svg width="32" height="32" alt=""></button>
+                            </li>
+                            <li><a class="navlink" href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Inscription / Connexion <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">S'inscrire</a></li>
+                                    <li><a href="#">Se connecter</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
         <section>
         <div class="ball text-center" id="ball" name="ball">
             <h1>Présentation</h1>
@@ -46,21 +80,26 @@
                 interagir par le biais de notre intérêt commun pour la
                 découverte culinaire.</p>
         </div>
-        <div class="ball" id="ball" name="ball">  
+        <div class="ball" name="ball">
             <h1>Publicité</h1>
             <img id="myLogo" class="img-fluid" src="image/aVenir.png" alt="logo" style="width:300px;"></div>
-        <div class="ball" id="ball">
+        <div class="ball" >
             <h1>Vidéo Explicative</h1>
             <img class="img-fluid" src="image/aVenir.png" alt="logo" style="width:300px;">
         </div>
-        <div class="ball" id="ball">
+        <div class="ball">
             <h1>Témoignages Utilisateurs</h1>
             <img class="img-fluid" src="image/aVenir.png" alt="logo" style="width:300px;">
         </div>
         <h1>Simple onload animation</h1>
-        <div class="ball" id="ball">
+        <div class="ball">
             Loaded
         </div>
     </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="" type="text/javascript"></script>
     </body>
 </html>

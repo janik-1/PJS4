@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    font-family: 'Lucida Console', Monaco, monospace;
 }
 
 div {
@@ -27,6 +27,30 @@ h1:hover {
     line-height: 40px;
     text-align: center;
   }*/
-  
+
+.navbar{
+    background: linear-gradient(deeppink,orange);
+    font-size: 15px;
+}
+
+.navbar .navbar-collapse .navlink{
+    color : black;
+    transition: 1s;
+}
+
+.navbar .navbar-collapse .navlink:hover{
+    color : white;
+}
+
+.navbar .navbar-collapse .dropdown-menu{
+    background:linear-gradient(deeppink,orange);
+}
+
+#btnLangue{
+    background-color: transparent;
+    border-style: none;
+    padding-top: 7px;
+    height: 5px;
+}
 
 

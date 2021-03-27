@@ -51,7 +51,7 @@ window.addEventListener("load", function () {
 
             $.getJSON('https://api-adresse.data.gouv.fr/search?q=' + data.features[0].properties.city + '&type=municipality', function (result) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
                 $('#pop').html(parseFloat(result.features[0].properties.population)); // On met la population de la ville dans les infos
-                compteur($('#pop'));
+                //compteur($('#pop'));
             });
 
             // Si le code postal de ville commence par 75 il devient 75000 pour considérer Paris comme une seule ville
@@ -126,6 +126,82 @@ window.addEventListener("load", function () {
             });
         });
     })
+
+
+
+      // This sample uses the Autocomplete widget to help the user select a
+      // place, then it retrieves the address components associated with that
+      // place, and then it populates the form fields with those details.
+      // This sample requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      let placeSearch;
+      let autocomplete;
+      const componentForm = {
+        street_number: "short_name",
+        route: "long_name",
+        locality: "long_name",
+        administrative_area_level_1: "short_name",
+        country: "long_name",
+        postal_code: "short_name",
+      };
+
+        // Create the autocomplete object, restricting the search predictions to
+        // geographical location types.
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById("autocomplete"),
+          { componentRestrictions: { country: "fr" },
+          fields: ["formatted_address", "geometry", "name"],
+            types: ["establishment"]}
+        );
+        // Avoid paying for data that you don't need by restricting the set of
+        // place fields that are returned to just the address components.
+        autocomplete.setFields(["address_component"]);
+        // When the user selects an address from the drop-down, populate the
+        // address fields in the form.
+        autocomplete.addListener("place_changed", selectPlace);
+
+      function selectPlace() {
+        // Get the place details from the autocomplete object.
+        const place = autocomplete.getPlace();
+        console.log(place);
+        console.log(place.name);
+        console.log(place.formatted_address);
+        if(!place.geometry){
+            //il n'a pas selectioné un endroit
+            document.getElementById("autocomplete").placeholder = "Entrez un restaurant";
+            console.log("marche pas");
+        } else {
+            let latitude = place.geometry.location.lat();
+            let longitude = place.geometry.location.lng(); 
+            let latlngPoint = new L.LatLng(latitude, longitude); 
+            mymap.setView([latitude, longitude], 13);
+            mymap.fireEvent('click', {
+                latlng: latlngPoint,
+                layerPoint: mymap.latLngToLayerPoint(latlngPoint),
+                containerPoint: mymap.latLngToContainerPoint(latlngPoint)
+            });
+            let info = "Nom : " + place.name + "<br> Adresse : " + place.formatted_address ;
+            document.getElementById("infos").innerHTML = info;
+            $("#ajoutEtaBtn").fadeIn();
+        }
+
+        // for (const component in componentForm) {
+        //   document.getElementById(component).value = "";
+        //   document.getElementById(component).disabled = false;
+        // }
+
+        // // Get each component of the address from the place details,
+        // // and then fill-in the corresponding field on the form.
+        // for (const component of place.address_components) {
+        //   const addressType = component.types[0];
+
+        //   if (componentForm[addressType]) {
+        //     const val = component[componentForm[addressType]];
+        //     document.getElementById(addressType).value = val;
+        //   }
+        // }
+      }
+        
 });
 
 // function compteur(object) {

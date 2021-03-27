@@ -13,10 +13,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlx5BQ52Nb7AAACUxLJ8ioc4Ht3syAwgU&libraries=places"></script>
     <!-- Javascript Material Design -->
     <script type="text/javascript" src="./vues/js/carte.js"></script>
-    <link rel="stylesheet" href="./vues/css/styleLogin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./vues/css/styleLogin.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
     <header>
@@ -58,20 +63,30 @@
         </div>
         <!-- end header inner --> 
     </header>
-    <div class="containerCarte">
-        <div class="contenu">
-        <input type="search" id="recherche" name="restaurant">
-             <button id = "search">Rechercher</button>
+    <div class="container">
+        <div class="contenu col-12">
+            <input type="search" id="recherche" name="restaurant">
+            <button id = "search">Rechercher</button>
 
-        <div id="mapid"></div>
+            <div id="locationField">
+            <input
+                id="autocomplete"
+                placeholder="Enter your address"
+                type="text"/>
+            </div>
+            <span id="infos"></span>
+            <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaBtn">
+                <button type="submit" class="btn-link nav-link">Ajoutez cet établissment à votre liste</button>
+            </form>
         </div>
-    
         
-
-
-
-
+        <div class="containerCarte">
+            <div id="mapid" class="md-col-12"></div>
+        </div>
+        
     </div>
+
+    
 
 </body>
 </html>

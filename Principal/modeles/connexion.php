@@ -28,7 +28,7 @@ function verif(){
             $_SESSION['mdp'] = $row['mdp'];
             $_SESSION['id'] = $row['id_ins'];
             $delai = 0.0;
-            $url = 'index.php?controle=accueil&action=af';
+            $url = 'index.php?controle=carte&action=lancercarte';
             header("Refresh: $delai;url=$url"); 
             return true;
         endif;

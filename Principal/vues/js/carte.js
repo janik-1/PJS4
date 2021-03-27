@@ -110,21 +110,22 @@ window.addEventListener("load", function () {
 
     // ========================================================= Recherche par nom de ville ===========================================================================   
 
-    // $("#btnSearchVille").on("click", function () {
-    //     let ville = $("#inputVille").val();
-    //     $.getJSON('https://api-adresse.data.gouv.fr/search?q=' + ville, function (result) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr            
-    //         let longitude = result.features[0].geometry.coordinates[0];
-    //         let latitude = result.features[0].geometry.coordinates[1];
-    //         let latlngPoint = new L.LatLng(latitude, longitude);
-    //         //on déclenche le clic sur mymap aux cordonnées de latlngPoint
-    //         mymap.setView([latitude, longitude], 13);
-    //         mymap.fireEvent('click', {
-    //             latlng: latlngPoint,
-    //             layerPoint: mymap.latLngToLayerPoint(latlngPoint),
-    //             containerPoint: mymap.latLngToContainerPoint(latlngPoint)
-    //         });
-    //     });
-    // })
+    $("#search").on("click", function () {
+        let ville = $("#recherche").val();
+        $.getJSON('https://api-adresse.data.gouv.fr/search?q=' + ville, function (result) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr            
+            let longitude = result.features[0].geometry.coordinates[0];
+            let latitude = result.features[0].geometry.coordinates[1];
+            let latlngPoint = new L.LatLng(latitude, longitude);
+            //on déclenche le clic sur mymap aux cordonnées de latlngPoint
+            mymap.setView([latitude, longitude], 13);
+
+            mymap.fireEvent('click', {
+                latlng: latlngPoint,
+                layerPoint: mymap.latLngToLayerPoint(latlngPoint),
+                containerPoint: mymap.latLngToContainerPoint(latlngPoint)
+            });
+        });
+    })
 });
 
 // function compteur(object) {

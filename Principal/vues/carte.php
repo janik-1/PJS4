@@ -60,8 +60,17 @@
     </header>
     <div class="containerCarte">
         <div class="contenu">
-            <div id="mapid"></div>
+        <input type="search" id="recherche" name="restaurant">
+             <button id = "search">Rechercher</button>
+
+        <div id="mapid"></div>
         </div>
+    
+        
+
+
+
+
     </div>
 
 </body>

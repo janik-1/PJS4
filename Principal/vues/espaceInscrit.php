@@ -81,20 +81,20 @@
         <?php
             while($row1 = $stmtAmiA->fetch(PDO::FETCH_ASSOC)) :
             echo("<div class='row pl-5'>");
-            //echo($row1["ami2"]);
+            echo($row1["nom"]);
             echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
                     <input class='disnone' type='text' name='idami' value= ".  ($row1['ami2']) . " readonly>  
-                    <button type='submit' class='btn-link'>Voir sa carte</button>
+                    <button type='submit' class='btn-link btnamis'>Voir sa carte</button>
                     </form>");
             echo("<br> </div>");  
             endwhile;
             
             while($row2 = $stmtAmiB->fetch(PDO::FETCH_ASSOC)) :
             echo("<div class='row pl-5'>");
-            echo($row2["ami1"]);
+            echo($row2["nom"]);
             echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
                     <input class='disnone' type='text' name='idami' value= ".  ($row2['ami1']) . " readonly>  
-                    <button type='submit' class='btn-link'>Voir sa carte</button>
+                    <button type='submit' class='btn-link btnamis'>Voir sa carte</button>
                     </form>");            
             echo("<br> </div>");  
             endwhile; 

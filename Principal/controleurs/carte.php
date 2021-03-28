@@ -1,12 +1,22 @@
 <?php 
 
 function lancercarte(){
+    session_start();
+    $s =""; 
  require ("./vues/carte.php");
 }
 
 function ajoutListe(){
     require ("./modeles/carte.php");
-    AjoutFavori();
+    $s ="";
+    if(AjoutFavori()){
+        $s="Votre élément est maintenant en favoris";
+    }
+    else {
+        $s="L'ajout de cet élémenent n'a pas pu aboutir";
+    }
+    require("./vues/carte.php");
+
 }
 
 function listefav(){
@@ -14,8 +24,11 @@ function listefav(){
 }
 
 function carteAmi(){
-    $id = $_SESSION["id"];
-    require("./vues/carteAmi.php");
+    require("./vues/carteAmi.php");    
+}
+
+function listefavAmi(){
+    require("./modeles/listefavAmi.php");
 }
 
 ?>

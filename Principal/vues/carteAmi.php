@@ -17,7 +17,7 @@
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlx5BQ52Nb7AAACUxLJ8ioc4Ht3syAwgU&libraries=places"></script>
     <!-- Javascript Material Design -->
-    <script type="text/javascript" src="./vues/js/carte.js"></script>
+    <script type="text/javascript" src="./vues/js/carteAmi.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./vues/css/styleLogin.css">
@@ -72,6 +72,12 @@
             </div>
             <div class="col-sm">
                 <p>du txt</p>
+            </div>
+            <div class="">
+                <?php 
+                    $idami=  isset($_POST['idami'])?($_POST['idami']):'';
+                    echo("<input type='text' value= '" . $idami . "' name='idami' class='disnone' id='idami' readonly>");
+                ?>
             </div>
         </div>
            

@@ -18,6 +18,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlx5BQ52Nb7AAACUxLJ8ioc4Ht3syAwgU&libraries=places"></script>
     <!-- Javascript Material Design -->
     <script type="text/javascript" src="./vues/js/carte.js"></script>
+    <script type="text/javascript" src="./vues/js/listeperso.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./vues/css/styleLogin.css">
@@ -70,7 +71,7 @@
                 <h3 class="text_align_center">
                     Vous êtes bien connecté ! 
                     <?php
-                        session_start();
+                        
                         echo($_SESSION['nom']); 
                     ?>
                 </h3>
@@ -100,6 +101,10 @@
                     </div>
                     <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
                 </form>
+                <br>
+                <?php
+                    echo($s);
+                ?>
             </div>
             <div class="col-sm">
                 <p>du txt</p>

@@ -192,7 +192,6 @@ window.addEventListener("load", function () {
         url: 'index.php?controle=carte&action=listefav',
         type: 'GET',
         dataType: 'Json',
-        
         error: function(xhr, status, error) {
             alert("ERROR "+error);
             },
@@ -222,6 +221,10 @@ window.addEventListener("load", function () {
 
     });
 
+    // document.getElementsByClassName("btnAmis").addEventListener("clicked", function(){
+    //     document.getElementById("ListeFav").innerHTML = "";
+    // })
+    
 
 
 });

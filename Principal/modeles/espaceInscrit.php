@@ -103,7 +103,7 @@ function acceptDem($idami, $valide, $ami1){
 function getAmisPartA(){
     require ("./connect.php");
     $id = $_SESSION["id"];
-	$requete = "SELECT * FROM ami where ami1 = " . $id . " and rep_dem='O'";
+	$requete = "SELECT * FROM ami, inscrit where ami1 = " . $id . " and rep_dem='O' and ami2=id_ins";
     try {
         $stmtAmiA = $pdo->query($requete);
     }
@@ -117,7 +117,7 @@ function getAmisPartA(){
 function getAmisPartB(){
     require ("./connect.php");
     $id = $_SESSION["id"];
-	$requete = "SELECT * FROM ami where ami2 = " . $id . " and rep_dem='O'";
+	$requete = "SELECT * FROM ami, inscrit where ami2 = " . $id . " and rep_dem='O' and ami1=id_ins";
     try {
         $stmtAmiB = $pdo->query($requete);
     }

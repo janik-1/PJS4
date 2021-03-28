@@ -8,26 +8,14 @@ function AjoutFavori(){
 	$lat = isset($_POST['infoLati'])?($_POST['infoLati']):'';
 	$id_ins = $_SESSION['id'];
 	$favoris = "O";
-	echo($nom);
-	echo("<br>");
-	echo($id_ins);
-	echo("<br>");
-	echo($lat);
-	echo($adresse);
-	echo("<br>");
 	if (!checkLieuExistant($nom,$adresse)){
-		echo("sasa <br>");
 		ajouterlieu($nom, $adresse, $long, $lat);
 	}
 	$id_lieu = getIdLieu($nom, $adresse);
-	echo("gefe <br>");
-	echo(getIdLieu($nom, $adresse));
 	if (checkNoteExistant($id_lieu, $id_ins)){
-		echo("asz <br>");
 		return false;
 	}
 	else {
-		echo("zasa <br>");
 		ajoutFavReq($id_lieu, $id_ins,$favoris);
 		return true;
 	}

@@ -75,7 +75,7 @@
                 type="text"/>
             </div>
             <span id="infos"></span>
-            <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaBtn">
+            <form action="" method="post" id="ajoutEtaBtn">
                 <button type="submit" class="btn-link nav-link">Ajoutez cet établissment à votre liste</button>
             </form>
         </div>

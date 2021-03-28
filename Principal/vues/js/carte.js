@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
     var latitudeCliquee;
     var longitudeCliquee;
     var chemins = new Array();
-
+    var global = null;
     // =============================================== Préparation de la carte Leaflet ==================================================
 
     console.log("Chargement de la carte...");
@@ -162,6 +162,7 @@ window.addEventListener("load", function () {
 
       function selectPlace() {
         // Get the place details from the autocomplete object.
+        global = null;
         const place = autocomplete.getPlace();
         console.log(place);
         console.log(place.name);
@@ -182,7 +183,15 @@ window.addEventListener("load", function () {
             });
             let info = "Nom : " + place.name + "<br> Adresse : " + place.formatted_address ;
             document.getElementById("infos").innerHTML = info;
+
+           global = place;
             $("#ajoutEtaBtn").fadeIn();
+
+
+            
+            
+            
+        
         }
 
         // for (const component in componentForm) {
@@ -201,6 +210,28 @@ window.addEventListener("load", function () {
         //   }
         // }
       }
+      $( "#ajoutEtaBtn" ).click(function() {
+
+        let utilisateur = {
+            "nom": global.name,
+            "adresse": global.formatted_address,
+            "longitude": global.geometry.location.lng(),
+            "latitude":global.geometry.location.lat(),
+          };
+        
+       
+        $.ajax({
+            url: '../Principal/modeles/carte.php', 
+            method: 'POST',
+            data: {'utilisateur' :global.name},
+          
+            success: function(data){
+                console.log(data);
+            }
+        });
+        
+        
+      });
         
 });
 

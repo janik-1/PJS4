@@ -94,7 +94,6 @@ function ajoutFavReq($id_lieu, $id_ins, $favoris){
 	require ("./connect.php");
 	$sql="INSERT INTO note (lieu,inscrit,favoris) VALUES (:id_lieu, :id_ins, :favoris)"; 
 	try {
-		echo("aaaaaaaaaaaaaaa");
 		$commande = $pdo->prepare($sql);
 		$commande->bindParam(':id_lieu', $id_lieu, PDO::PARAM_STR);
 		$commande->bindParam(':id_ins', $id_ins, PDO::PARAM_STR);
@@ -120,7 +119,7 @@ function checkNoteExistant($id_lieu, $id_ins){
     }
 
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) :  
-		if ($row['id_lieu'] == $id_lieu  and $row['id_ins'] == trim($id_ins)) :
+		if ($row['lieu'] == $id_lieu  and $row['inscrit'] == trim($id_ins)) :
 			return true;
 		endif;
 	endwhile;

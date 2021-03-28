@@ -222,28 +222,41 @@ window.addEventListener("load", function () {
         // }
       }
 
-      $( "#ajoutEtaBtn" ).click(function() {
+       
+        //     $.ajax({ // procédure AJAX sur l'API du STIF Navitia
+    //         type: "GET",
+    //         url: "https://04f316f2-d3b4-4203-b395-2550565c7e49@api.navitia.io/v1/coverage/fr-idf/journeys?from=" + longitudeCliquee + "%3B" + latitudeCliquee + "&to=" + longitudeCentre + "%3B" + latitudeCentre,
+    //         dataType: 'json',
+    //         headers: {
+    //             Authorization: 'CityPop ' + btoa('04f316f2-d3b4-4203-b395-2550565c7e49')
+    //         },
+    //         success: function (itineraire) {
+    //             console.table(itineraire);
+    //             sections = itineraire.journeys[0].sections; // On récupère les sestions de l'itinéraire
+    //             sections.forEach(element => {
+    //                 let couleur;
+    //                 try { // On essaye de recup la couleur
+    //                     couleur = "#" + element.display_informations.color;
+    //                 } catch (erreur) { // Si ya pas de couleur (trajet à pied) on met un joli bleu
+    //                     couleur = "#0066CC";
+    //                 }
 
-        let utilisateur = {
-            "nom": global.name,
-            "adresse": global.formatted_address,
-            "longitude": global.geometry.location.lng(),
-            "latitude":global.geometry.location.lat(),
-          };
-        
-          console.log(utilisateur);
-        $.ajax({
-            url: './modeles/carte.php', 
-            method: 'POST',
-            data: {'utilisateur' :global.name},
-          
-            success: function(data){
-                console.log(data);
-            }
-        });
+    //                 let styleLigne = { "color": couleur, "weight": 10 }; // Création du style de la layer avec la couleur du trajet
 
-       });
-        
+    //                 let portionChemin = element.geojson;
+    //                 let geojson = L.geoJSON(portionChemin, { style: styleLigne }); // On envoie le GeoJSON à Leaflet pour créer la layer de dessins
+    //                 chemins.push(geojson); // On met la layer dans le tableau pour pouvoir l'effacer ensuite
+    //                 geojson.addTo(mymap); // On ajoute la layer à leaflet
+    //             });
+
+    //             let temps = Math.round(itineraire.journeys[0].duration / 60);
+    //             $("#tempsItineraire").fadeIn();
+    //             $(".mins").fadeIn();
+    //             $("#tempsItineraire").text(temps);
+    //             compteur($("#tempsItineraire"));
+
+    //         }
+
 });
 
 // function compteur(object) {

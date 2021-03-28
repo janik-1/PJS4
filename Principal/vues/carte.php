@@ -63,34 +63,39 @@
         </div>
         <!-- end header inner --> 
     </header>
-    <div class="container">
-        <div class="contenu col-12">
-            <input type="search" id="recherche" name="restaurant">
-            <button id = "search">Rechercher</button>
+    <div class="container contenu">
+        <div class="row">
+            <div class="col-sm pb-5">
+                <input type="search" id="recherche" name="restaurant">
+                <button id = "search">Rechercher</button>
 
-            <div id="locationField">
-            <input
-                id="autocomplete"
-                placeholder="Enter your address"
-                type="text"/>
+                <div id="locationField">
+                <input
+                    id="autocomplete"
+                    placeholder="Enter your address"
+                    type="text"/>
+                </div>
+
+        
+                <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaForm">
+                    <div id="infosEta">
+                        Nom : <input type="text" id="infoNom" name="infoNom" value=" " readonly> <br> 
+                        Adresse : <input type="text" id="infoAdresse" name="infoAdresse" value=" " readonly> <br>
+                    </div>
+                    <div id="longlat">
+                        <input type="text" id="infoLongi" name="infoLongi" value=" " readonly>
+                        <input type="text" id="infoLati" name="infoLati" value=" " readonly>  
+                    </div>
+                    <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
+                </form>
             </div>
-
-       
-            <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaForm">
-                <div id="infosEta">
-                    Nom : <input type="text" id="infoNom" name="infoNom" value=" " readonly> <br> 
-                    Adresse : <input type="text" id="infoAdresse" name="infoAdresse" value=" " readonly> <br>
-                </div>
-                <div id="longlat">
-                    <input type="text" id="infoLongi" name="infoLongi" value=" " readonly>
-                    <input type="text" id="infoLati" name="infoLati" value=" " readonly>  
-                </div>
-                <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
-            </form>
+            <div class="col-sm">
+                <p>du txt</p>
+            </div>
         </div>
         
-        
-        <div class="containerCarte">
+       
+        <div class="containerCarte ">
             <div id="mapid" class="md-col-12"></div>
         </div>
         

@@ -45,8 +45,8 @@
                                 <li> <a href="./equipe.html">L'équipe</a> </li>
                                 <li> <a href="./aide.html">Contactez-nous</a> </li>
                                 <li>
-                                    <form name="x" action="./index.php?controle=espaceInscrit&action=affEspace" method="post">
-                                        <button type="submit" class="btn-link nav-link">Vos Amis</button>
+                                    <form name="x" action="./index.php?controle=carte&action=lancerCarte" method="post">
+                                        <button type="submit" class="btn-link nav-link">Votre carte</button>
                                     </form>                    
                                 </li>
                                 <li>
@@ -65,55 +65,23 @@
         <!-- end header inner --> 
     </header>
     <div class="container contenu">
-        <div class="row pb-5">
-            <div class="col-12">
-                <h3 class="text_align_center">
-                    Vous êtes bien connecté ! 
-                    <?php
-                        session_start();
-                        echo($_SESSION['nom']); 
-                    ?>
-                </h3>
-            </div>
-        </div>
         <div class="row">
             <div class="col-sm pb-5">
-                <!-- <input type="search" id="recherche" name="restaurant">
-                <button id = "search">Rechercher</button> -->
-
-                <div id="locationField">
-                <input
-                    id="autocomplete"
-                    placeholder="Recherchez votre établissement préféré ici"
-                    type="text"/>
-                </div>
-
-        
-                <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaForm">
-                    <div id="infosEta">
-                        Nom : <input type="text" id="infoNom" name="infoNom" value=" " readonly> <br> 
-                        Adresse : <input type="text" id="infoAdresse" name="infoAdresse" value=" " readonly> <br>
-                    </div>
-                    <div id="longlat">
-                        <input type="text" id="infoLongi" name="infoLongi" value=" " readonly>
-                        <input type="text" id="infoLati" name="infoLati" value=" " readonly>  
-                    </div>
-                    <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
-                </form>
+                <input type="search" id="recherche" name="restaurant">
+                <button id = "search">Rechercher une ville</button>
             </div>
             <div class="col-sm">
                 <p>du txt</p>
             </div>
         </div>
-        
-       
+           
         <div class="containerCarte ">
             <div id="mapid" class="md-col-12"></div>
         </div>
         
 
         <div class="aligncenter pt-5">
-            <h2> Votre liste :</h2>
+            <h2> La liste de votre ami :</h2>
             <div id = "ListeFav">
             </div>  
         </div>

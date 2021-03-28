@@ -40,27 +40,6 @@ window.addEventListener("load", function () {
         mymap.removeLayer(marker); // On enlève l'ancien marker
         marker = new L.marker([latitude, longitude]); // On crée le nouveau marker
         mymap.addLayer(marker); // On l'ajoute
-
-        // Infos sur la ville où on a cliqué
-
-        // 1) Récupération du nom de la ville
-        // $.getJSON('https://api-adresse.data.gouv.fr/reverse/?long=' + e.latlng.lng + '&lat=' + e.latlng.lat, function (data) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
-        //     $('#nom').html(data.features[0].properties.city); // On met le nom de la ville
-
-        //     // 2) Récupération du GeoJSON de la ville
-
-        //     $.getJSON('https://api-adresse.data.gouv.fr/search?q=' + data.features[0].properties.city + '&type=municipality', function (result) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
-        //         $('#pop').html(parseFloat(result.features[0].properties.population)); // On met la population de la ville dans les infos
-        //         //compteur($('#pop'));
-        //     });
-
-        //     // Si le code postal de ville commence par 75 il devient 75000 pour considérer Paris comme une seule ville
-        //     let postcode = new String(data.features[0].properties.postcode).includes("75") ? 75000 : data.features[0].properties.postcode;
-
-        //     $("#loader").fadeOut();
-        //     $('#infos').fadeIn(); // ON affiche la carte d'infos
-        //     $("#carteInfos").fadeIn();
-        // });
     });
 
     // ========================================================= Itinéraire ===========================================================================
@@ -208,7 +187,7 @@ window.addEventListener("load", function () {
             iconAnchor: [16,32],
             popupAnchor: [0,-37]
         });
-        
+
       $.ajax({
         url: 'index.php?controle=carte&action=listefav',
         type: 'GET',

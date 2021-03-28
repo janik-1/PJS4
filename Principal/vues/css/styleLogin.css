@@ -88,3 +88,7 @@ input{
 .aligncenter{
     text-align: center;
 }
+
+.disnone{
+    display: none;
+}

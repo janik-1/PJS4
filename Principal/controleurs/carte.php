@@ -13,4 +13,9 @@ function listefav(){
     require("./modeles/listefav.php");
 }
 
+function carteAmi(){
+    $id = $_SESSION["id"];
+    require("./vues/carteAmi.php");
+}
+
 ?>

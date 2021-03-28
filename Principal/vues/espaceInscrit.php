@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte | MIAP</title>
+    <title>Vos amis | MIAP</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -45,8 +45,8 @@
                                 <li> <a href="./equipe.html">L'équipe</a> </li>
                                 <li> <a href="./aide.html">Contactez-nous</a> </li>
                                 <li>
-                                    <form name="x" action="./index.php?controle=espaceInscrit&action=affEspace" method="post">
-                                        <button type="submit" class="btn-link nav-link">Vos Amis</button>
+                                    <form name="x" action="./index.php?controle=carte&action=lancerCarte" method="post">
+                                        <button type="submit" class="btn-link nav-link">Votre carte</button>
                                     </form>                    
                                 </li>
                                 <li>
@@ -61,67 +61,66 @@
                 </div>
             </div>
             </div>
+        <!-- end header inner -->
         </div>
-        <!-- end header inner --> 
     </header>
-    <div class="container contenu">
-        <div class="row pb-5">
-            <div class="col-12">
-                <h3 class="text_align_center">
-                    Vous êtes bien connecté ! 
-                    <?php
-                        session_start();
-                        echo($_SESSION['nom']); 
-                    ?>
-                </h3>
-            </div>
-        </div>
+    <div class="contenu container">
         <div class="row">
-            <div class="col-sm pb-5">
-                <!-- <input type="search" id="recherche" name="restaurant">
-                <button id = "search">Rechercher</button> -->
-
-                <div id="locationField">
-                <input
-                    id="autocomplete"
-                    placeholder="Recherchez votre établissement préféré ici"
-                    type="text"/>
-                </div>
-
-        
-                <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaForm">
-                    <div id="infosEta">
-                        Nom : <input type="text" id="infoNom" name="infoNom" value=" " readonly> <br> 
-                        Adresse : <input type="text" id="infoAdresse" name="infoAdresse" value=" " readonly> <br>
-                    </div>
-                    <div id="longlat">
-                        <input type="text" id="infoLongi" name="infoLongi" value=" " readonly>
-                        <input type="text" id="infoLati" name="infoLati" value=" " readonly>  
-                    </div>
-                    <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
-                </form>
-            </div>
-            <div class="col-sm">
-                <p>du txt</p>
-            </div>
+            <h3 class="mx-auto"> Vos Amis</h3> 
+        </div> <hr>
+        <div class="row pl-5">
+            <form name="x" action="./index.php?controle=espaceInscrit&action=InvitAmi" method="post">
+                Ajoutez un ami avec son adresse mail : <br>
+                <input type="text" name="mailAmi" value="" placeholder="Saisisez son adresse mail ici" >
+                <button type="submit" class="btn-link nav-link">Ajouter cet ami</button>
+            </form> 
         </div>
+        <div class="row pt-5 pl-5">
+            Votre Liste d'amis : <br>
+        </div>    
+        <?php
+            while($row1 = $stmtAmiA->fetch(PDO::FETCH_ASSOC)) :
+            echo("<div class='row pl-5'>");
+            //echo($row1["ami2"]);
+            echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
+                    <input class='disnone' type='text' name='idami' value= ".  ($row1['ami2']) . " readonly>  
+                    <button type='submit' class='btn-link'>Voir sa carte</button>
+                    </form>");
+            echo("<br> </div>");  
+            endwhile;
+            
+            while($row2 = $stmtAmiB->fetch(PDO::FETCH_ASSOC)) :
+            echo("<div class='row pl-5'>");
+            echo($row2["ami1"]);
+            echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
+                    <input class='disnone' type='text' name='idami' value= ".  ($row2['ami1']) . " readonly>  
+                    <button type='submit' class='btn-link'>Voir sa carte</button>
+                    </form>");            
+            echo("<br> </div>");  
+            endwhile; 
+            ?>
         
-       
-        <div class="containerCarte ">
-            <div id="mapid" class="md-col-12"></div>
-        </div>
+        <div class="row pt-3 pl-5">
+            Vos demandes d'amis reçu : <br>
+        </div>    
+        <?php
+            while($row = $stmtDem->fetch(PDO::FETCH_ASSOC)) :
+            echo("<div class='row pl-5'>");
+            //echo($row["ami1"]);
+            
+            echo($row["nom"]);
+            echo(" ");
+            echo("Id inscrit : ");
+            echo("<form action='./index.php?controle=espaceInscrit&action=accepterDem' method='post' class='pl-2'>
+                    <input class='disnone' type='text' name='idami' value= ".  ($row['ami1']) . " readonly>  
+                    <button name='acceptation' type='submit' class='btn-link'>Accepter</button>
+                    <button name='refus' type='submit' class='btn-link'>Refuser</button>
+                </form>");   
+            echo("<br> </div>");            
+            endwhile;
+            ?> 
+              <!-- //<input name='idami' value=($row['ami1']) readonly>  -->
         
-
-        <div class="aligncenter pt-5">
-            <h2> Votre liste :</h2>
-            <div id = "ListeFav">
-            </div>  
-        </div>
-      
-        
-       </div>
-
-    
-
+    </div>
 </body>
 </html>

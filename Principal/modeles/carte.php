@@ -7,23 +7,28 @@ function AjoutFavori(){
 	$long = isset($_POST['infoLongi'])?($_POST['infoLongi']):'';
 	$lat = isset($_POST['infoLati'])?($_POST['infoLati']):'';
 	$id_ins = $_SESSION['id'];
+	$favoris = "O";
 	echo($nom);
+	echo("<br>");
 	echo($id_ins);
+	echo("<br>");
 	echo($lat);
 	echo($adresse);
+	echo("<br>");
 	if (!checkLieuExistant($nom,$adresse)){
-		echo("sasa");
+		echo("sasa <br>");
 		ajouterlieu($nom, $adresse, $long, $lat);
 	}
 	$id_lieu = getIdLieu($nom, $adresse);
-	echo("gefe");
+	echo("gefe <br>");
+	echo(getIdLieu($nom, $adresse));
 	if (checkNoteExistant($id_lieu, $id_ins)){
-		echo("asz");
+		echo("asz <br>");
 		return false;
 	}
 	else {
-		echo("zasa");
-		ajoutFavReq($id_lieu, $id_ins);
+		echo("zasa <br>");
+		ajoutFavReq($id_lieu, $id_ins,$favoris);
 		return true;
 	}
 	
@@ -85,13 +90,15 @@ function ajouterlieu($nom, $adresse, $long, $lat) {
 	}
 }
 
-function ajoutFavReq($id_lieu, $id_ins){
+function ajoutFavReq($id_lieu, $id_ins, $favoris){
 	require ("./connect.php");
-	$sql="INSERT INTO note (id_lieu,id_ins,favoris) VALUES (:id_lieu, :id_ins, 'O')"; 
+	$sql="INSERT INTO note (lieu,inscrit,favoris) VALUES (:id_lieu, :id_ins, :favoris)"; 
 	try {
+		echo("aaaaaaaaaaaaaaa");
 		$commande = $pdo->prepare($sql);
 		$commande->bindParam(':id_lieu', $id_lieu, PDO::PARAM_STR);
 		$commande->bindParam(':id_ins', $id_ins, PDO::PARAM_STR);
+		$commande->bindParam(':favoris', $favoris, PDO::PARAM_STR);
 		$commande->execute();		
 		return true;
 	}

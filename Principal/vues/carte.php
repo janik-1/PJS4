@@ -78,12 +78,12 @@
        
             <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaForm">
                 <div id="infosEta">
-                    Nom : <span id="infoNom" name="infoNom" value=" "></span> <br>
-                    Adresse : <span id="infoAdresse" name="infoAdresse" value=" "></span>
+                    Nom : <input type="text" id="infoNom" name="infoNom" value=" " readonly> <br> 
+                    Adresse : <input type="text" id="infoAdresse" name="infoAdresse" value=" " readonly> <br>
                 </div>
                 <div id="longlat">
-                    <span id="infoLongi" name="infoLongi" value=" "></span>
-                    <span id="infoLati" name="infoLati" value=" "></span>     
+                    <input type="text" id="infoLongi" name="infoLongi" value=" " readonly>
+                    <input type="text" id="infoLati" name="infoLati" value=" " readonly>  
                 </div>
                 <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
             </form>

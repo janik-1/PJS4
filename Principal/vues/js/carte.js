@@ -221,28 +221,28 @@ window.addEventListener("load", function () {
         //   }
         // }
       }
-    //   $( "#ajoutEtaBtn" ).click(function() {
 
-    //     let utilisateur = {
-    //         "nom": global.name,
-    //         "adresse": global.formatted_address,
-    //         "longitude": global.geometry.location.lng(),
-    //         "latitude":global.geometry.location.lat(),
-    //       };
+      $( "#ajoutEtaBtn" ).click(function() {
+
+        let utilisateur = {
+            "nom": global.name,
+            "adresse": global.formatted_address,
+            "longitude": global.geometry.location.lng(),
+            "latitude":global.geometry.location.lat(),
+          };
         
-    //       console.log(utilisateur);
-    //     $.ajax({
-    //         url: '../Principal/modeles/carte.php', 
-    //         method: 'POST',
-    //         data: {'utilisateur' :global.name},
+          console.log(utilisateur);
+        $.ajax({
+            url: './modeles/carte.php', 
+            method: 'POST',
+            data: {'utilisateur' :global.name},
           
-    //         success: function(data){
-    //             console.log(data);
-    //         }
-    //     });
-        
-        
-    //   });
+            success: function(data){
+                console.log(data);
+            }
+        });
+
+       });
         
 });
 

@@ -228,18 +228,18 @@ window.addEventListener("load", function () {
       }
       
       $.ajax({
-        url: './modeles/listefav.php',
+        url: '../Principal/modeles/listefav.php',
         type: 'GET',
-        dataType: 'JSON',
-        async:false,
+        dataType: 'Json',
+        
 
         error: function(xhr, status, error) {
             alert("ERROR "+error);
             },
             
         success: function(response){
-                global=response;
-                console.log(response);
+                
+                console.log(response['liste']);
     }
 
 });

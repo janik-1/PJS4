@@ -70,9 +70,17 @@ input{
     background-color: #74bacf;
     padding: 3vw;
     height: 90vh;
-    display: flexbox;
+    display: flex;
 }
 
 #ajoutEtaBtn{
+    display: none;
+}
+
+#infosEta{
+    display: none;
+}
+
+#longlat{
     display: none;
 }

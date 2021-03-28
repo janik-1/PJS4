@@ -74,11 +74,21 @@
                 placeholder="Enter your address"
                 type="text"/>
             </div>
-            <span id="infos"></span>
-            <form action="" method="post" id="ajoutEtaBtn">
-                <button type="submit" class="btn-link nav-link">Ajoutez cet établissment à votre liste</button>
+
+       
+            <form action="./index.php?controle=carte&action=ajoutListe" method="post" id="ajoutEtaForm">
+                <div id="infosEta">
+                    Nom : <span id="infoNom" name="infoNom" value=" "></span> <br>
+                    Adresse : <span id="infoAdresse" name="infoAdresse" value=" "></span>
+                </div>
+                <div id="longlat">
+                    <span id="infoLongi" name="infoLongi" value=" "></span>
+                    <span id="infoLati" name="infoLati" value=" "></span>     
+                </div>
+                <button type="submit" class="btn-link nav-link" id="ajoutEtaBtn" >Ajoutez cet établissment à votre liste</button>
             </form>
         </div>
+        
         
         <div class="containerCarte">
             <div id="mapid" class="md-col-12"></div>

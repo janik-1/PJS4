@@ -174,6 +174,7 @@ window.addEventListener("load", function () {
         } else {
             let latitude = place.geometry.location.lat();
             let longitude = place.geometry.location.lng(); 
+            //document.getElementById("infoLati").innerHTML = latitude;
             let latlngPoint = new L.LatLng(latitude, longitude); 
             mymap.setView([latitude, longitude], 13);
             mymap.fireEvent('click', {
@@ -181,10 +182,20 @@ window.addEventListener("load", function () {
                 layerPoint: mymap.latLngToLayerPoint(latlngPoint),
                 containerPoint: mymap.latLngToContainerPoint(latlngPoint)
             });
-            let info = "Nom : " + place.name + "<br> Adresse : " + place.formatted_address ;
-            document.getElementById("infos").innerHTML = info;
+            // let info = "Nom : " + place.name + "<br> Adresse : " + place.formatted_address ;
+            // document.getElementById("infos").innerHTML = info;
+            document.getElementById("infoNom").innerHTML = place.name;
+            document.getElementById("infoAdresse").innerHTML = place.formatted_address;
 
-           global = place;
+            document.getElementById("infoNom").value = place.name;
+            document.getElementById("infoAdresse").value = place.formatted_address;
+            document.getElementById("infoLongi").value = longitude;
+            //document.getElementById("infoLati").innerHTML = latitude;
+            document.getElementById("infoLati").value = latitude;
+            //console.log(document.getElementById("infoLati").value);
+            $("#infosEta").fadeIn();
+
+            global = place;
             $("#ajoutEtaBtn").fadeIn();
 
 
@@ -210,28 +221,28 @@ window.addEventListener("load", function () {
         //   }
         // }
       }
-      $( "#ajoutEtaBtn" ).click(function() {
+    //   $( "#ajoutEtaBtn" ).click(function() {
 
-        let utilisateur = {
-            "nom": global.name,
-            "adresse": global.formatted_address,
-            "longitude": global.geometry.location.lng(),
-            "latitude":global.geometry.location.lat(),
-          };
+    //     let utilisateur = {
+    //         "nom": global.name,
+    //         "adresse": global.formatted_address,
+    //         "longitude": global.geometry.location.lng(),
+    //         "latitude":global.geometry.location.lat(),
+    //       };
         
-       
-        $.ajax({
-            url: '../Principal/modeles/carte.php', 
-            method: 'POST',
-            data: {'utilisateur' :global.name},
+    //       console.log(utilisateur);
+    //     $.ajax({
+    //         url: '../Principal/modeles/carte.php', 
+    //         method: 'POST',
+    //         data: {'utilisateur' :global.name},
           
-            success: function(data){
-                console.log(data);
-            }
-        });
+    //         success: function(data){
+    //             console.log(data);
+    //         }
+    //     });
         
         
-      });
+    //   });
         
 });
 

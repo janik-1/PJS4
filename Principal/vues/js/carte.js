@@ -205,6 +205,11 @@ window.addEventListener("load", function () {
         
         }
 
+  
+
+            
+        
+
         // for (const component in componentForm) {
         //   document.getElementById(component).value = "";
         //   document.getElementById(component).disabled = false;
@@ -221,6 +226,23 @@ window.addEventListener("load", function () {
         //   }
         // }
       }
+      
+      $.ajax({
+        url: './modeles/listefav.php',
+        type: 'GET',
+        dataType: 'JSON',
+        async:false,
+
+        error: function(xhr, status, error) {
+            alert("ERROR "+error);
+            },
+            
+        success: function(response){
+                global=response;
+                console.log(response);
+    }
+
+});
 
        
         //     $.ajax({ // procédure AJAX sur l'API du STIF Navitia

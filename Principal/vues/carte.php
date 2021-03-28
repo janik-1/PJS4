@@ -99,7 +99,12 @@
             <div id="mapid" class="md-col-12"></div>
         </div>
         
-    </div>
+
+        <div id = "information">
+
+        </div>
+        
+       </div>
 
     
 

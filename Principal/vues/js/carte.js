@@ -44,23 +44,23 @@ window.addEventListener("load", function () {
         // Infos sur la ville où on a cliqué
 
         // 1) Récupération du nom de la ville
-        $.getJSON('https://api-adresse.data.gouv.fr/reverse/?long=' + e.latlng.lng + '&lat=' + e.latlng.lat, function (data) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
-            $('#nom').html(data.features[0].properties.city); // On met le nom de la ville
+        // $.getJSON('https://api-adresse.data.gouv.fr/reverse/?long=' + e.latlng.lng + '&lat=' + e.latlng.lat, function (data) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
+        //     $('#nom').html(data.features[0].properties.city); // On met le nom de la ville
 
-            // 2) Récupération du GeoJSON de la ville
+        //     // 2) Récupération du GeoJSON de la ville
 
-            $.getJSON('https://api-adresse.data.gouv.fr/search?q=' + data.features[0].properties.city + '&type=municipality', function (result) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
-                $('#pop').html(parseFloat(result.features[0].properties.population)); // On met la population de la ville dans les infos
-                //compteur($('#pop'));
-            });
+        //     $.getJSON('https://api-adresse.data.gouv.fr/search?q=' + data.features[0].properties.city + '&type=municipality', function (result) { // Procédure AJAX avec décodage JSON intégré sur l'API adresse.data.gouv.fr
+        //         $('#pop').html(parseFloat(result.features[0].properties.population)); // On met la population de la ville dans les infos
+        //         //compteur($('#pop'));
+        //     });
 
-            // Si le code postal de ville commence par 75 il devient 75000 pour considérer Paris comme une seule ville
-            let postcode = new String(data.features[0].properties.postcode).includes("75") ? 75000 : data.features[0].properties.postcode;
+        //     // Si le code postal de ville commence par 75 il devient 75000 pour considérer Paris comme une seule ville
+        //     let postcode = new String(data.features[0].properties.postcode).includes("75") ? 75000 : data.features[0].properties.postcode;
 
-            $("#loader").fadeOut();
-            $('#infos').fadeIn(); // ON affiche la carte d'infos
-            $("#carteInfos").fadeIn();
-        });
+        //     $("#loader").fadeOut();
+        //     $('#infos').fadeIn(); // ON affiche la carte d'infos
+        //     $("#carteInfos").fadeIn();
+        // });
     });
 
     // ========================================================= Itinéraire ===========================================================================
@@ -198,86 +198,52 @@ window.addEventListener("load", function () {
             global = place;
             $("#ajoutEtaBtn").fadeIn();
 
-
-            
-            
-            
-        
         }
-
-  
-
-            
-        
-
-        // for (const component in componentForm) {
-        //   document.getElementById(component).value = "";
-        //   document.getElementById(component).disabled = false;
-        // }
-
-        // // Get each component of the address from the place details,
-        // // and then fill-in the corresponding field on the form.
-        // for (const component of place.address_components) {
-        //   const addressType = component.types[0];
-
-        //   if (componentForm[addressType]) {
-        //     const val = component[componentForm[addressType]];
-        //     document.getElementById(addressType).value = val;
-        //   }
-        // }
       }
-      
+
+      const myAPIKey = "ac2a98485a22455f8fc4c47d38f33e12";
+        var IconResto = L.icon({
+            iconUrl: `https://api.geoapify.com/v1/icon/?type=material&color=red&icon=hamburger&iconType=awesome&apiKey=${myAPIKey}`,
+            iconSize: [30,37],
+            iconAnchor: [16,32],
+            popupAnchor: [0,-37]
+        });
+        
       $.ajax({
-        url: '../Principal/modeles/listefav.php',
+        url: 'index.php?controle=carte&action=listefav',
         type: 'GET',
         dataType: 'Json',
         
-
         error: function(xhr, status, error) {
             alert("ERROR "+error);
             },
             
         success: function(response){
-                
-                console.log(response['liste']);
-    }
+    
+            var k = response['liste'].length;
+            let str ="";
+            for (let j=0; j< k; j++){
+                str+= "Nom : "
+                str+= response['liste'][j]["nom"];
+                str+= "<br>";
+                str+= "Adresse : "
+                str+= response['liste'][j]["adresse"];
+                str+= "<br> <hr>";
 
-});
+            }
+            document.getElementById("ListeFav").innerHTML = str;
+            for (var i = 0; i < response['liste'].length; i++) {
+                var item = response['liste'][i];
+                marker = new L.marker([item.lat,item.lng], {icon: IconResto}).bindPopup(item.nom);
+                mymap.addLayer(marker);
+            }
+            variable = response;
+            console.log(response['liste']);
+        }
 
-       
-        //     $.ajax({ // procédure AJAX sur l'API du STIF Navitia
-    //         type: "GET",
-    //         url: "https://04f316f2-d3b4-4203-b395-2550565c7e49@api.navitia.io/v1/coverage/fr-idf/journeys?from=" + longitudeCliquee + "%3B" + latitudeCliquee + "&to=" + longitudeCentre + "%3B" + latitudeCentre,
-    //         dataType: 'json',
-    //         headers: {
-    //             Authorization: 'CityPop ' + btoa('04f316f2-d3b4-4203-b395-2550565c7e49')
-    //         },
-    //         success: function (itineraire) {
-    //             console.table(itineraire);
-    //             sections = itineraire.journeys[0].sections; // On récupère les sestions de l'itinéraire
-    //             sections.forEach(element => {
-    //                 let couleur;
-    //                 try { // On essaye de recup la couleur
-    //                     couleur = "#" + element.display_informations.color;
-    //                 } catch (erreur) { // Si ya pas de couleur (trajet à pied) on met un joli bleu
-    //                     couleur = "#0066CC";
-    //                 }
+    });
 
-    //                 let styleLigne = { "color": couleur, "weight": 10 }; // Création du style de la layer avec la couleur du trajet
 
-    //                 let portionChemin = element.geojson;
-    //                 let geojson = L.geoJSON(portionChemin, { style: styleLigne }); // On envoie le GeoJSON à Leaflet pour créer la layer de dessins
-    //                 chemins.push(geojson); // On met la layer dans le tableau pour pouvoir l'effacer ensuite
-    //                 geojson.addTo(mymap); // On ajoute la layer à leaflet
-    //             });
-
-    //             let temps = Math.round(itineraire.journeys[0].duration / 60);
-    //             $("#tempsItineraire").fadeIn();
-    //             $(".mins").fadeIn();
-    //             $("#tempsItineraire").text(temps);
-    //             compteur($("#tempsItineraire"));
-
-    //         }
 
 });
 

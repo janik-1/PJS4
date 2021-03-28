@@ -100,9 +100,12 @@
         </div>
         
 
-        <div id = "information">
-
+        <div class="aligncenter pt-5">
+            <h2> Votre liste :</h2>
+            <div id = "ListeFav">
+            </div>  
         </div>
+      
         
        </div>
 

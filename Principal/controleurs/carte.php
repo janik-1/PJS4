@@ -9,4 +9,8 @@ function ajoutListe(){
     AjoutFavori();
 }
 
+function listefav(){
+    require("./modeles/listefav.php");
+}
+
 ?>

@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `lieu` (
   `lat` FLOAT( 10, 6 ) NOT NULL ,
   `lng` FLOAT( 10, 6 ) NOT NULL ,
   PRIMARY KEY (`id_lieu`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+);
 
 CREATE TABLE IF NOT EXISTS `ami` (
   `ami1` int(11) NOT NULL,
@@ -27,14 +27,14 @@ CREATE TABLE IF NOT EXISTS `ami` (
   `demande` CHAR(1),
   `date_dem` date,
   `rep_dem` CHAR(1)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+);
 
 CREATE TABLE IF NOT EXISTS `note` (
   `inscrit` int(11) NOT NULL,
   `lieu` int(11) NOT NULL,
   `favoris` CHAR(1),
   `note` int(11)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+);
 
 ALTER TABLE ami
 ADD constraint fk_ida1

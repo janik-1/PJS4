@@ -25,7 +25,6 @@
 @import url(meanmenu.css);
 @import url(slick.css);
 @import url(jquery-ui.css);
-@import url(nice-select.css);
 
 /*---------------------------------------------------------------------
     skeleton
@@ -1365,5 +1364,5 @@ ul.contant_icon li img {
 
 #logo{
     width: 100%;
-    max-width: 150px;
+    max-width: 130px;
 }

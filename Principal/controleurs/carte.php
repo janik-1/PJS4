@@ -24,7 +24,7 @@ function listefav(){
 }
 
 function carteAmi(){
-    require("./vues/carteAmi.php");    
+    require("./vues/carteAmi.php");
 }
 
 function listefavAmi(){

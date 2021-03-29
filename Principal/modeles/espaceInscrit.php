@@ -3,14 +3,11 @@ session_start();
 $ami1= $_SESSION["id"];
 
 function actionsDem(){
-    //$idami = isset($_POST['idami'])?($_POST['idami']):'';
     $idami = isset($_POST['idami'])?($_POST['idami']):'';
     $valide='O';
     $invalide='N';
     $ami1 = $_SESSION["id"];
-    echo("aq");
     if(isset($_POST['acceptation'])) {
-        echo("aaa");
         acceptDem($idami,$valide,$ami1);
     }    
     elseif(isset($_POST['refus'])) {
@@ -21,12 +18,14 @@ function actionsDem(){
 function InviterAmi(){
     $valide = "O";
     $ami1 = $_SESSION["id"];
-    if (getAmibyMail()){
-        sendInvit($ami1 , getAmibyMail(), $valide);
-        return true;
-    }
-    else
+    if (!getAmibyMail()){
         return false;
+    }
+    else{
+        sendInvit($ami1 , getAmibyMail(), $valide);
+        return true;        
+    }
+
 }
 
 function sendInvit($ami1,$ami2,$demande){
@@ -61,8 +60,7 @@ function getAmibyMail(){
     }	
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) :  
         if ($row['mail'] == $mailAmi) :
-            $ami2 = $row["id_ins"];
-			return true;
+            return $ami2 = $row["id_ins"];
 		endif;
 	endwhile;
     return false;
@@ -131,7 +129,7 @@ function getAmisPartB(){
 function getDem(){
     require ("./connect.php");
     $id = $_SESSION["id"];
-	$requete = "SELECT * FROM ami, inscrit where ami2= " . $id . " and demande='O' and rep_dem is null and ami2=id_ins ";
+	$requete = "SELECT * FROM ami, inscrit where ami2= " . $id . " and demande='O' and rep_dem is null and ami1=id_ins ";
     try {
         $stmtDem = $pdo->query($requete);
     }

@@ -1,27 +1,35 @@
 <?php 
 function affEspace(){
-    require ("./modeles/espaceInscrit.php");
-    $stmtAmiA=getAmisPartA();
-    $stmtAmiB=getAmisPartB();
-    $stmtDem=getDem();
-
-    require ("./vues/espaceInscrit.php");
+    reqmodEs();
+    getaff();
 }
 
 function InvitAmi(){
     $s ="";
-    require ("./modeles/espaceInscrit.php");
+    reqmodEs();
     if (InviterAmi()){
         $s= "Votre invitation à été envoyé";
     }
     else{
         $s= "Votre invitation n'a pas pu aboutir";
     }
+    getaff();
+}
+
+function reqmodEs(){
+    require ("./modeles/espaceInscrit.php");
+}
+
+function getaff(){
+    $stmtAmiA=getAmisPartA();
+    $stmtAmiB=getAmisPartB();
+    $stmtDem=getDem();    
+    require ("./vues/espaceInscrit.php");
 }
 
 function accepterDem(){
-    require ("./modeles/espaceInscrit.php");
+    reqmodEs();
     actionsDem();
+    getaff();
 }
-
 ?>

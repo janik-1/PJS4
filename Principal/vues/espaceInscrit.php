@@ -85,7 +85,8 @@
                 echo("<div class='row pl-5'>");
                 echo($row1["nom"]);
                 echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
-                        <input class='disnone' type='text' name='idami' value= ".  ($row1['ami2']) . " readonly>  
+                        <input class='disnone' type='text' name='idami' value= ".  ($row1['ami2']) . " readonly>
+                        <input class='disnone' type='text' name='nomami' value= ".  ($row1['nom']) . " readonly>
                         <button type='submit' class='btn-link btnamis'>Voir sa carte</button>
                         </form>");
                 echo("<br> </div>");  
@@ -96,6 +97,7 @@
                 echo($row2["nom"]);
                 echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
                         <input class='disnone' type='text' name='idami' value= ".  ($row2['ami1']) . " readonly>  
+                        <input class='disnone' type='text' name='nomami' value= ".  ($row2['nom']) . " readonly>
                         <button type='submit' class='btn-link btnamis'>Voir sa carte</button>
                         </form>");            
                 echo("<br> </div>");  
@@ -109,16 +111,16 @@
             while($row = $stmtDem->fetch(PDO::FETCH_ASSOC)) :
             echo("<div class='row pl-5'>");
             //echo($row["ami1"]);
-            
-            echo($row["nom"]);
-            echo(" ");
-            echo("Id inscrit : ");
-            echo("<form action='./index.php?controle=espaceInscrit&action=accepterDem' method='post' class='pl-2'>
-                    <input class='disnone' type='text' name='idami' value= ".  ($row['ami1']) . " readonly>  
-                    <button name='acceptation' type='submit' class='btn-link'>Accepter</button>
-                    <button name='refus' type='submit' class='btn-link'>Refuser</button>
-                </form>");   
-            echo("<br> </div>");            
+                echo("Nom : ");
+                echo($row["nom"]);
+                echo(" ");
+                
+                echo("<form action='./index.php?controle=espaceInscrit&action=accepterDem' method='post' class='pl-2'>
+                        <input class='disnone' type='text' name='idami' value= ".  ($row['ami1']) . " readonly>  
+                        <button name='acceptation' type='submit' class='btn-link'>Accepter</button>
+                        <button name='refus' type='submit' class='btn-link'>Refuser</button>
+                    </form>");   
+                echo("<br> </div>");            
             endwhile;
             ?> 
     </div>

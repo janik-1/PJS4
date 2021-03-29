@@ -8,6 +8,7 @@ function AjoutFavori(){
 	$lat = isset($_POST['infoLati'])?($_POST['infoLati']):'';
 	$id_ins = $_SESSION['id'];
 	$favoris = "O";
+	$note = isset($_POST['note'])?($_POST['note']):'';
 	if (!checkLieuExistant($nom,$adresse)){
 		ajouterlieu($nom, $adresse, $long, $lat);
 	}
@@ -16,7 +17,7 @@ function AjoutFavori(){
 		return false;
 	}
 	else {
-		ajoutFavReq($id_lieu, $id_ins,$favoris);
+		ajoutFavReq($id_lieu, $id_ins,$favoris,$note);
 		return true;
 	}
 	
@@ -78,16 +79,28 @@ function ajouterlieu($nom, $adresse, $long, $lat) {
 	}
 }
 
-function ajoutFavReq($id_lieu, $id_ins, $favoris){
+function ajoutFavReq($id_lieu, $id_ins, $favoris, $note){
 	require ("./connect.php");
-	$sql="INSERT INTO note (lieu,inscrit,favoris) VALUES (:id_lieu, :id_ins, :favoris)"; 
+	if ($note=="0"){
+		$sql="INSERT INTO note (lieu,inscrit,favoris) VALUES (:id_lieu, :id_ins, :favoris)"; 
+	}
+	else{
+		$sql="INSERT INTO note (lieu,inscrit,favoris,note) VALUES (:id_lieu, :id_ins, :favoris, :note)"; 
+	}
+	
 	try {
 		$commande = $pdo->prepare($sql);
 		$commande->bindParam(':id_lieu', $id_lieu, PDO::PARAM_STR);
 		$commande->bindParam(':id_ins', $id_ins, PDO::PARAM_STR);
 		$commande->bindParam(':favoris', $favoris, PDO::PARAM_STR);
-		$commande->execute();		
+		if ($note=="0"){
+			$commande->execute();
+			return true;
+		}
+		$commande->bindParam(':note', $note, PDO::PARAM_STR);
+		$commande->execute();
 		return true;
+		
 	}
 		catch (PDOException $e) {
 			echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");

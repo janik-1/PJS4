@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./vues/css/styleLogin.css">
     <link rel="stylesheet" type="text/css" href="./styles/phone.css" media="only screen and (max-width: 767px)" />
-    <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
@@ -73,7 +72,7 @@
             <div class="col-12">
                 <h2 class="text_align_center">
                     <b>Votre carte Miap</b> 
-                </h3>
+                </h2>
             </div>
         </div>
         <div class="row text_align_center">
@@ -94,6 +93,14 @@
                     <div id="infosEta">
                         Nom : <input type="text" id="infoNom" name="infoNom" value=" " readonly> <br> 
                         Adresse : <input type="text" id="infoAdresse" name="infoAdresse" value=" " readonly> <br>
+                        Note (Facultative) : 	<select name="note" id="">
+                                    <option selected value="0"> -- Note -- </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></br>
                     </div>
                     <div id="longlat">
                         <input type="text" id="infoLongi" name="infoLongi" value=" " readonly>

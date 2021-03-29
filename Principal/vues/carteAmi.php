@@ -68,13 +68,24 @@
         <!-- end header inner --> 
     </header>
     <div class="container contenu">
+        <div class="row pb-3">
+            <div class="col-12">
+                <h2 class="text_align_center">
+                    <b>La carte Miap de 
+                    <?php 
+                        $nomami=  isset($_POST['nomami'])?($_POST['nomami']):'';       
+                        echo($nomami);                 
+                    ?></b> 
+                </h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm pb-5">
-                <input type="search" id="recherche" name="restaurant">
+                <input type="search" id="recherche" name="restaurant" placeholder="Une ville">
                 <button id = "search">Rechercher une ville</button>
             </div>
             <div class="col-sm">
-                <p>du txt</p>
+                <p></p>
             </div>
             <div class="">
                 <?php 

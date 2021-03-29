@@ -1,6 +1,4 @@
 body{
-    height: 100vh;
-    /* background-image: url("../img/bg.jpg"); */
     background: linear-gradient(90deg, rgba(244,68,115,0.5) 0%, rgba(235,156,41,0.5) 75%);
 }
 
@@ -39,7 +37,7 @@ input{
     display: flex;
 }
 
-.logo{
+.logocoins{
     position: absolute;
     z-index: 0;
     max-width: 300px;
@@ -91,4 +89,9 @@ input{
 
 .disnone{
     display: none;
+}
+
+.startcenter{
+    display: inline-block;
+    text-align: left;
 }

@@ -9,7 +9,7 @@
     <title>Inscription</title>
 </head>
 <body>
-    <a href="#"><img src="./vues/img/logo2.png" alt="miap" class=" img-fluid logo"></a>
+    <a href="#"><img src="./vues/img/logo2.png" alt="miap" class=" img-fluid logocoins"></a>
     <div class="espace"></div>
     <div class="centre">
         <div class="connect sm-col-12">

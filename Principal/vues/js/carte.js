@@ -206,8 +206,16 @@ window.addEventListener("load", function () {
                 str+= "<br>";
                 str+= "Adresse : "
                 str+= response['liste'][j]["adresse"];
-                str+= "<br> <hr>";
+                str+= "<br> ";
+                if(!response['liste'][j]['note'])
+                    str+="Note : Non noté <br>";
+                else
+                    str+="Note : " + response['liste'][j]["note"] + "<br>";
 
+                str+= "<form action='./index.php?controle=carte&action=retirerfav' method='post' class='pl-2'>"
+                str+= "<input class='disnone' type='text' name='idlieu' value= '" + (response['liste'][j]["lieu"]) + "' readonly>" 
+                str+= "<button name='refus' type='submit' class='btn-link'>Retirer de la liste</button>"
+                str+="</form><hr>"
             }
             document.getElementById("ListeFav").innerHTML = str;
             for (var i = 0; i < response['liste'].length; i++) {

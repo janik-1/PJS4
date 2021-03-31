@@ -88,7 +88,11 @@ window.addEventListener("load", function () {
                 str+= "<br>";
                 str+= "Adresse : "
                 str+= response['liste'][j]["adresse"];
-                str+= "<br> <hr>";
+                str+= "<br> ";
+                if(!response['liste'][j]['note'])
+                    str+="Note : Non noté <br> <hr>";
+                else
+                    str+="Note : " + response['liste'][j]["note"] + "<br> <hr>";
 
             }
             document.getElementById("ListeFav").innerHTML = str;

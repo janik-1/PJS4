@@ -31,4 +31,11 @@ function listefavAmi(){
     require("./modeles/listefavAmi.php");
 }
 
+function retirerfav(){
+    require ("./modeles/carte.php");
+    retirerliste();
+    $s="Votre élément à bien été retiré de votre liste.";
+    require("./vues/carte.php");
+}
+
 ?>

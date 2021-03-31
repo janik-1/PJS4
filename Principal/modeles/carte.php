@@ -14,7 +14,8 @@ function AjoutFavori(){
 	}
 	$id_lieu = getIdLieu($nom, $adresse);
 	if (checkNoteExistant($id_lieu, $id_ins)){
-		return false;
+		reajouterliste($id_lieu,$id_ins,$note);
+		return true;
 	}
 	else {
 		ajoutFavReq($id_lieu, $id_ins,$favoris,$note);
@@ -125,6 +126,50 @@ function checkNoteExistant($id_lieu, $id_ins){
 		endif;
 	endwhile;
 	return false;
+}
+
+function retirerliste(){
+	$lieu =  isset($_POST['idlieu'])?($_POST['idlieu']):'';
+	$idins = $_SESSION['id'];
+	$invalide = 'N';
+	require ("./connect.php");
+	$sql = "UPDATE note SET favoris = :invalide where lieu = :lieu and inscrit=:idins";
+    try {
+        $commande = $pdo->prepare($sql);
+		$commande->bindParam(':invalide', $invalide, PDO::PARAM_STR);
+        $commande->bindParam(':lieu', $lieu, PDO::PARAM_INT);
+        $commande->bindParam(':idins', $idins, PDO::PARAM_INT);
+		$commande->execute();		
+    }
+    catch (PDOException $e) {
+        echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");
+    die(); // On arrête tout.
+    }	
+}
+
+function reajouterliste($id_lieu, $id_ins, $note){
+	$valide = 'O';
+	require ("./connect.php");
+	if ($note=="0"){
+		$sql = "UPDATE note SET favoris = :valide where lieu = :id_lieu and inscrit=:id_ins";
+	}
+	else{
+		$sql = "UPDATE note SET favoris = :valide , note = :note where lieu = :id_lieu and inscrit=:id_ins";
+	}
+    try {
+        $commande = $pdo->prepare($sql);
+		$commande->bindParam(':valide', $valide, PDO::PARAM_STR);
+        $commande->bindParam(':id_lieu', $id_lieu, PDO::PARAM_INT);
+        $commande->bindParam(':id_ins', $id_ins, PDO::PARAM_INT);
+		if ($note!="0"){
+			$commande->bindParam(':note', $note, PDO::PARAM_INT);
+		}
+		$commande->execute();		
+    }
+    catch (PDOException $e) {
+        echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");
+    die(); // On arrête tout.
+    }	
 }
 
 ?>

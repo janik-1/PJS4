@@ -859,6 +859,23 @@ nav.main-menu {
 	background: #000;
 }
 
+/*---------------------------------------------------------------------
+    Body of Blog
+---------------------------------------------------------------------*/
+
+.separation{
+	height: 2px;
+	color: orange;
+	background-color: orange;
+	width: 50%;
+	border: none;
+}
+
+.imgBlog{
+	width: 450px;
+	height: 450px;
+	object-fit: cover;
+}
 
 /** about section **/
 
@@ -1357,10 +1374,6 @@ ul.contant_icon li img {
 	text-align: center;
 }
 
-.imgBlog{
-    width: 100%;
-    max-width: 350px;
-}
 
 #logo{
     width: 100%;

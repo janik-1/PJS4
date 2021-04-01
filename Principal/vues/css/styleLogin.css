@@ -17,6 +17,7 @@ a{
     text-align: center;
     z-index: 5;
     background: rgb(255, 255, 255,0.75);
+    width: 35%;
 }
 
 .centre input{
@@ -43,6 +44,7 @@ a{
 .centre{
     justify-content: center;
     display: flex;
+    padding-top: 75px;
 }
 
 
@@ -83,10 +85,15 @@ a{
 #ajoutEtaBtn{
     display: none;
     border-radius: 5px;
-    background-color: #FF9999;
+    background-color: #F29F05;
     color: black;
     padding: 5px;
     margin: auto;
+}
+
+#ajoutEtaBtn:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
 }
 
 #infosEta{
@@ -143,5 +150,60 @@ a{
 }
 
 .btn-ami{
-    background-color: #FF9999;
+    background-color: #F29F05;
+    width: 200px;
+    height: 50px;
+}
+
+.btn-ami:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
+}
+
+#return{
+    background-color: #F29F05;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+#return:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
+    border: 1px solid black;
+    color: black;
+}
+
+#inscrire{
+    background-color: #F29F05;
+    border: 1px solid black;
+}
+
+#inscrire:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
+    border: 1px solid black;
+}
+
+#connecter{
+    background-color: #F29F05;
+    border: 1px solid black;
+}
+
+#connecter:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
+    border: 1px solid black;
+}
+
+#voir{
+    background-color: #F29F05;
+    border: 1px solid #F29F05;
+    color : black;
+}
+
+#voir:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
+    border: 1px solid #F25E5E;
 }

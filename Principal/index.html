@@ -9,6 +9,7 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Miap - Partagez vos restaurants !</title>
+      <link rel="icon" type="image/png" href="./image/LogoPng.png">
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -22,6 +23,7 @@
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -35,7 +37,7 @@
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                      <div class="full">
                         <div class="center-desk">
-                           <div class="logo"> <a href="index.html"><img src="./image/LogoPng.png" alt="Logo" class="img-fluid" id="logo"></a></div>
+                           <div class="logo"> <a href="index.html"><img src="./image/miap_fond.png" alt="Logo" class="img-fluid" id="logo"></a></div>
                         </div>
                      </div>
                   </div>
@@ -54,7 +56,7 @@
                                  </li>
                                  <li>
                                     <form name="x" action="./index.php?controle=inscription&action=affins" method="post">
-                                       <button type="submit" class="btn-link nav-link">Inscription</button>
+                                       <button id="login" type="submit" class="btn-link nav-link">Inscription</button>
                                     </form> 
                                  </li>                               
                                  <li>                                 
@@ -79,7 +81,7 @@
                      <div class="carousel-caption relative">
                         <h1>Miap</h1>
                         <p> Partagez vos meilleurs restaurants avec vos amis </p>
-                        <a  href="#">Commencez dès maintenant !</a>
+                        <a  href="./index.php?controle=connexion&action=connexion">Commencez dès maintenant !</a>
                      </div>
                   </div>
                </div>
@@ -125,7 +127,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2> Pourquoi nous ? </h2>
+                     <h2> Explorez notre site</h2>
                      <span></span>
                   </div>
                </div>
@@ -134,34 +136,34 @@
          <div class="container margin-r-l">
             <div class="row">
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 thumb">
-                  <div class="service-box">
+                  <div class="service-box"><a href="./blog.html">
                      <figure>
-                        <img  src="images/1.jpg" class="zoom img-fluid "  alt="">
-                        </a>
+                        <img  src="images/1.jpg" class="zoom img-fluid "  alt="blog">
+                        
                         <span class="hoverle">
-                           <span>Food</span>
+                           <span>Notre blog</span>
                         </span>  
-                     </figure>
+                     </figure></a>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 thumb">
-                  <div class="service-box">
+                  <div class="service-box"><a href="./equipe.html">
                      <figure>
-                        <img  src="images/2.jpg" class="zoom img-fluid "  alt="">
-                        </a>
+                        <img  src="images/2.jpg" class="zoom img-fluid "  alt="equipe">
+                        
                         <span class="hoverle">
-                           <span>Fashion</span>
+                           <span>Notre équipe</span>
                         </span>
-                     </figure>
+                     </figure></a>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 thumb">
-                  <div class="service-box">
+                  <div class="service-box"><a href="./aide.html">
                      <figure>                       
-                        <img  src="images/3.jpg" class="zoom img-fluid "  alt="">
+                        <img  src="images/3.jpg" class="zoom img-fluid "  alt="faq">
                         <span class="hoverle">
-                           <span> Booking </span>
-                     </figure>
+                           <span>FAQ</span>
+                     </figure></a>
                   </div>
                </div>
             </div>
@@ -169,7 +171,7 @@
       </div>
       <!-- end service -->
       <!-- Download -->
-      <div class="contenu">
+      <!--<div class="contenu">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -187,16 +189,16 @@
                </div>
             </div>
          </div>
-      </div>
+      </div>-->
       <!--  footer --> 
-      <footr>
+      <footer>
          <div class="footer pb-5">
             <div class="container">
                <div class="row">
                   <div class="col-lg-3 col-md-6 col-sm-12 width">
                      <div class="address">
                         <h3>Adresse</h3>
-                        <i><img src="icon/3.png">149 Avenue de Versailles, 75016 Paris</i>                        
+                        <i><img src="icon/3.png">143 Avenue de Versailles, 75016 Paris</i>                        
                      </div>
                   </div>
                   <div class="col-lg-2 col-md-6 col-sm-12 width">
@@ -215,10 +217,10 @@
                      <div class="address">
                         <h3>Réseaux Sociaux </h3>
                         <ul class="contant_icon">
-                           <li><img src="icon/fb.png" alt="icon"/></li>
-                           <li><img src="icon/tw.png" alt="icon"/></li>
-                           <li><img src="icon/lin (2).png" alt="icon"/></li>
-                           <li><img src="icon/instagram.png" alt="icon"/></li>
+                           <!--<li><img src="icon/fb.png" alt="icon"/></li>-->
+                           <li><a href="https://twitter.com/Miap09882942"><img src="icon/tw.png" alt="icon"/></a></li>
+                           <!--<li><img src="icon/lin (2).png" alt="icon"/></li>-->
+                           <li><a href="https://www.instagram.com/miapies_world/"><img src="icon/instagram.png" alt="icon"/></a></li>
                         </ul>
                      </div>
                   </div>
@@ -232,7 +234,7 @@
                </div>
             </div>
          </div>
-      </footr>
+      </footer>
       <!-- end footer -->
       <!-- Javascript files--> 
       <script src="js/jquery.min.js"></script> 

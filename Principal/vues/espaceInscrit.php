@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vos amis | MIAP</title>
-
+    <link rel="icon" type="image/png" href="./image/LogoPng.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin="" />
@@ -33,7 +33,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                         <div class="center-desk">
-                            <div class="logo"> <a href="index.html"><img src="./image/LogoPng.png" alt="Logo" class="img-fluid" id=logo></a></div>
+                            <div class="logo"> <a href="index.html"><img src="./image/miap_fond.png" alt="Logo" class="img-fluid" id=logo></a></div>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
         echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
                         <input class='disnone' type='text' name='idami' value= ".  ($row1['ami2']) . " readonly>
                         <input class='disnone' type='text' name='nomami' value= ".  ($row1['nom']) . " readonly>
-                        <button type='submit' class='btn-link btnamis'>Voir sa carte</button>
+                        <button type='submit' id='voir' class='btn-link btnamis'>Voir sa carte</button>
                         </form>");
         echo("<br> </div>");
     endwhile;
@@ -99,7 +99,7 @@
         echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
                         <input class='disnone' type='text' name='idami' value= ".  ($row2['ami1']) . " readonly>  
                         <input class='disnone' type='text' name='nomami' value= ".  ($row2['nom']) . " readonly>
-                        <button type='submit' class='btn-link btnamis'>Voir sa carte</button>
+                        <button type='submit' id='voir' class='btn-link btnamis'>Voir sa carte</button>
                         </form>");
         echo("<br> </div>");
     endwhile;

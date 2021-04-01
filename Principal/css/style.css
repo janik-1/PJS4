@@ -223,7 +223,7 @@ button {
 }
 
 .theme_bg {
-	background: #38c8a8;
+	background: #D93672;
 }
 
 .margin_top_30 {
@@ -256,12 +256,12 @@ button {
 	position: relative;
 	letter-spacing: -0.5px;
 	color: #114c7d;
-	border-left: solid #38c8a8 10px;
+	border-left: solid #D93672 10px;
 	padding-left: 15px;
 }
 
 .main_heading h2 strong {
-	background: #38c8a8;
+	background: #D93672;
 	color: #fff;
 	font-weight: 600;
 	padding: 0 15px;
@@ -292,7 +292,7 @@ button {
 }
 
 .small_main_heading h2 strong {
-	color: #38c8a8;
+	color: #D93672;
 	font-weight: 600;
 }
 
@@ -351,7 +351,7 @@ a.readmore_bt {
 	padding: 0px 5px;
 	text-transform: uppercase;
 	font-weight: 600;
-	background: #38c8a8;
+	background: #D93672;
 	position: fixed;
 	bottom: 20px;
 	z-index: 99;
@@ -434,11 +434,11 @@ nav.main-menu {
 
 .menu-area-main li:hover a,
 .menu-area-main li:focus a {
-	color: #000;
+	color: #D93672;
 }
 
 .menu-area-main li.active a {
-	color: #000;
+	color: #D93672;
 }
 
 .main-menu ul>li nth:child(5) a {
@@ -481,7 +481,7 @@ nav.main-menu {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #38c8a8;
+	background-color: #D93672;
 	opacity: 0.4;
 	transform: scale(0);
 	-webkit-transform: scale(0);
@@ -509,7 +509,7 @@ nav.main-menu {
 }
 
 .main-menu ul>li a {
-	padding: 6px 36px 0 36px;
+	padding: 6px 30px 0 30px;
 	line-height: 20px;
 	font-size: 16px;
 	display: block;
@@ -527,7 +527,7 @@ nav.main-menu {
 }
 
 .main-menu ul>li .sub-down li a {
-	color: #114c7d;
+	color: red;
 	font-size: 15px;
 	text-transform: capitalize;
 	font-weight: 300;
@@ -537,7 +537,7 @@ nav.main-menu {
 }
 
 .main-menu ul>li .sub-down li a:hover {
-	color: #111111;
+	color: #D93672;
 }
 
 .main-menu ul li:first-child {
@@ -559,8 +559,8 @@ nav.main-menu {
 	width: 240px;
 	z-index: 999;
 	background: #fff;
-	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	-webkit-box-shadow: 0 6px 12px #D93672;
+	box-shadow: 0 6px 12px #D93672;
 }
 
 .main-menu>ul>li:hover>ul {
@@ -708,7 +708,7 @@ nav.main-menu {
 }
 
 .megamenu .sub-full.megamenu-categories .women-box .banner-up-text a {
-	background: #111111;
+	background: #D93672;
 	color: #ffffff !important;
 	display: inline-block;
 	padding: 10px 16px;
@@ -723,7 +723,7 @@ nav.main-menu {
 }
 
 .is-sticky .sticky-wrapper-header .middle-area {
-	padding: 10px 0px
+	padding: 10px 0px;
 }
 
 .sticky-wrapper:not(.is-sticky) {
@@ -737,7 +737,7 @@ nav.main-menu {
 	transform: perspective(1px) translateZ(0);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 	position: relative;
-	background: #111111;
+	background: #D93672;
 	-webkit-transition-property: color;
 	transition-property: color;
 	-webkit-transition-duration: 0.3s;
@@ -752,7 +752,7 @@ nav.main-menu {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: #38c8a8;
+	background: #D93672;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
 	-webkit-transform-origin: 50%;
@@ -806,8 +806,8 @@ nav.main-menu {
 ---------------------------------------------------------------------*/
 
 .header {
-	background: #0fc690;
-	padding: 40px 0px;
+	background: #F29F05;
+	padding: 40px 10px;
 	padding-bottom: 35px;
 }
 
@@ -843,8 +843,8 @@ nav.main-menu {
 
 .banner-main .carousel-caption a {
 	text-transform: uppercase;
-	border: #0fc690 solid 1px;
-	background: #0fc690;
+	border: #F29F05 solid 1px;
+	background: #F29F05;
 	width: 196px;
 	padding: 12px 0;
 	display: inline-block;
@@ -855,8 +855,8 @@ nav.main-menu {
 }
 
 .banner-main .carousel-caption a:hover {
-	border: #000 solid 1px;
-	background: #000;
+	border: #F25E5E solid 1px;
+	background: #F25E5E;
 }
 
 /*---------------------------------------------------------------------
@@ -926,7 +926,7 @@ a[href*="Collapse"]{
 	font-weight: bold;
 	color: #050303;
 	line-height: 46px;
-	border-bottom: #0fc690 solid 1px;
+	border-bottom: #F29F05 solid 1px;
 	width: 410px;
 	margin: 0 auto;
 	margin-bottom: 0px;
@@ -950,8 +950,8 @@ a[href*="Collapse"]{
 
 .about .img-box a {
 	text-transform: uppercase;
-	border: #000 solid 1px;
-	background: #000;
+	border: #F29F05 solid 1px;
+	background: #F29F05;
 	width: 206px;
 	padding: 15px 0;
 	display: inline-block;
@@ -962,8 +962,8 @@ a[href*="Collapse"]{
 }
 
 .about .img-box a:hover {
-	border: #0fc690 solid 1px;
-	background: #0fc690;
+	border: #F25E5E solid 1px;
+	background: #F25E5E;
 }
 
 
@@ -1009,7 +1009,7 @@ a[href*="Collapse"]{
 
 .service .service-box .hoverle a {
 	padding: 5px 30px;
-	color: #40cfa4;
+	color: #D93672;
 }
 
 .service .titlepage {
@@ -1023,7 +1023,7 @@ a[href*="Collapse"]{
 	font-weight: bold;
 	color: #050303;
 	line-height: 46px;
-	border-bottom: #0fc690 solid 1px;
+	border-bottom: #F29F05 solid 1px;
 	width: 210px;
 	margin: 0 auto;
 	margin-bottom: 0px;
@@ -1039,9 +1039,10 @@ a[href*="Collapse"]{
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	background: #0fc690d6;
+	background: #F29F05d6;
 	align-items: center;
 	margin: 0 15px;
+	transition: 0.5s;
 }
 
 .service .service-box:hover .hoverle a {
@@ -1090,7 +1091,7 @@ a[href*="Collapse"]{
 }
 
 .read-more a {
-	background: #000;
+	background: #F29F05;
 	width: 206px;
 	text-transform: uppercase;
 	color: #fff;
@@ -1103,7 +1104,7 @@ a[href*="Collapse"]{
 }
 
 .read-more a:hover {
-	background: #0fc690;
+	background: #F25E5E;
 }
 
 
@@ -1204,7 +1205,7 @@ a[href*="Collapse"]{
 }
 
 .footer {
-	background: #023023;
+	background: #D93672;
 	padding-top: 55px;
 }
 
@@ -1309,16 +1310,17 @@ ul.contant_icon li img {
 
 .footer .address .submit-btn {
 	padding: 5px 29px;
-	border: #0fc690 solid 1px;
-	background: #0fc690;
+	border: #F29F05 solid 1px;
+	background: #F29F05;
 	color: #fff;
 	font-weight: 500;
 	font-size: 20px;
 }
 
 .footer .address .submit-btn:hover {
-	background: #000;
-	border: #000 solid 1px;
+	background: #F25E5E;
+	border: #F25E5E solid 1px;
+	transition: 0.5s;
 }
 
 
@@ -1387,4 +1389,22 @@ ul.contant_icon li img {
 #logo{
     width: 100%;
     max-width: 130px;
+	text-align: center;
+}
+
+
+.main-menu ul>li>form>button{
+	padding: 6px 30px 0 30px;
+	line-height: 20px;
+	font-size: 16px;
+	display: block;
+	font-weight: 500;
+	color: white;
+	text-transform: uppercase;
+	background-color: #F29F05;
+}
+
+.main-menu ul>li>form>button:hover{
+	color:#D93672;
+	transition: 0.5s;
 }

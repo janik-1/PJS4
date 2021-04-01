@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipe | Miap</title>
+    <link rel="icon" type="image/png" href="./image/LogoPng.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
@@ -24,7 +25,7 @@
                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                   <div class="full">
                      <div class="center-desk">
-                        <div class="logo"> <a href="index.html"><img src="./image/LogoPng.png" alt="Logo" class="img-fluid" id=logo></a></div>
+                        <div class="logo"> <a href="index.html"><img src="./image/miap_fond.png" alt="Logo" class="img-fluid" id=logo></a></div>
                      </div>
                   </div>
                </div>
@@ -38,12 +39,12 @@
                               <li> <a href="./aide.html">Contactez-nous</a> </li>
                               <li>
                                  <form name="x" action="./index.php?controle=connexion&action=connexion" method="post">
-                                    <button type="submit" class="btn-link nav-link">Se Connecter</button>
+                                    <button id="connect" type="submit" class="btn-link nav-link">Se Connecter</button>
                                  </form>                    
                               </li>
                               <li>
                                  <form name="x" action="./index.php?controle=inscription&action=affins" method="post">
-                                    <button type="submit" class="btn-link nav-link">Inscription</button>
+                                    <button id="login" type="submit" class="btn-link nav-link">Inscription</button>
                                  </form> 
                               </li>                               
                               <li>                                 
@@ -127,14 +128,14 @@
         </div>
     </div>
 
-    <footr>
+    <footer>
       <div class="footer pb-5">
          <div class="container">
             <div class="row">
                <div class="col-lg-3 col-md-6 col-sm-12 width">
                   <div class="address">
                      <h3>Adresse</h3>
-                     <i><img src="icon/3.png">149 Avenue de Versailles, 75016 Paris</i>                        
+                     <i><img src="icon/3.png">143 Avenue de Versailles, 75016 Paris</i>                        
                   </div>
                </div>
                <div class="col-lg-2 col-md-6 col-sm-12 width">
@@ -153,10 +154,10 @@
                   <div class="address">
                      <h3>Réseaux Sociaux </h3>
                      <ul class="contant_icon">
-                        <li><img src="icon/fb.png" alt="icon"/></li>
-                        <li><img src="icon/tw.png" alt="icon"/></li>
-                        <li><img src="icon/lin (2).png" alt="icon"/></li>
-                        <li><img src="icon/instagram.png" alt="icon"/></li>
+                        <!--<li><img src="icon/fb.png" alt="icon"/></li>-->
+                        <li><a href="https://twitter.com/Miap09882942"><img src="icon/tw.png" alt="icon"/></a></li>
+                        <!--<li><img src="icon/lin (2).png" alt="icon"/></li>-->
+                        <li><a href="https://www.instagram.com/miapies_world/"><img src="icon/instagram.png" alt="icon"/></a></li>
                      </ul>
                   </div>
                </div>
@@ -170,7 +171,7 @@
             </div>
          </div>
       </div>
-   </footr>
+   </footer>
     <!-- Javascript files--> 
     <script src="js/jquery.min.js"></script> 
     <script src="js/popper.min.js"></script> 

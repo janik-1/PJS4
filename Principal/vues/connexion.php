@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="styles/phone.css" media="only screen and (max-width: 767px)" />
 
     <title>Se Connecter</title>
+    <link rel="icon" type="image/png" href="./image/LogoPng.png">
 </head>
 <body>
 <a href="#"><img src="./vues/img/logo2.png" alt="miap" class=" img-fluid logocoins"></a>
@@ -26,7 +27,7 @@
             Mot de passe	<br/>
             <input 	type="password" 	name="mdp"
                       value= " " />             <br/><br/>
-            <input type= "submit"  value="Connexion" >
+            <input id="connecter" type= "submit"  value="Connexion" >
         </form> <br>
         <?php
         if($errco==1){
@@ -36,13 +37,13 @@
         <hr>
         <span class="pt-3"> Pas encore inscrit ? </span> <br>
         <form class="form-co-ins" name="x" action="index.php?controle=inscription&action=affins" method="post">
-            <button type="submit" class="btn-link nav-link">S'inscrire</button>
+            <button id="inscrire" type="submit" class="btn-link nav-link">S'inscrire</button>
         </form>
         <!-- <a href="./Inscription.php"> S'inscrire </a> -->
         <br> <hr>
-        <span>
+        <span><button id="return">
                 <a href="./index.html">Retour à l'accueil</a>
-            </span>
+    </button> </span>
 
     </div>
 

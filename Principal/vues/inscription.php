@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./vues/css/styleLogin.css">
     <link rel="stylesheet" type="text/css" href="./vues/css/phone.css" media="only screen and (max-width: 767px)" />
     <title>Inscription</title>
+    <link rel="icon" type="image/png" href="./image/LogoPng.png">
+    <link rel="icon" type="image/png" href="./image/LogoPng.png">
 </head>
 <body>
 <a href="#"><img src="./vues/img/logo2.png" alt="miap" class=" img-fluid logocoins"></a>
@@ -27,7 +29,7 @@
             Mot de passe (6 caractères minimum)<br/>
             <input 	type="password" 	name="mdp"
                       value= " " />             <br/><br/>
-            <input type= "submit"  value="S'inscrire" >
+            <input id="inscrire" type= "submit"  value="S'inscrire" >
         </form> <br>
         <?php
         if($errins==1){
@@ -37,13 +39,13 @@
         <hr>
         <span class="pt-3"> Vous avez déjà un compte ? </span> <br>
         <form class="form-co-ins" name="x" action="index.php?controle=connexion&action=connexion" method="post">
-            <button type="submit" class="btn-link nav-link">Connectez vous</button>
+            <button id="connecter" type="submit" class="btn-link nav-link">Connectez vous</button>
         </form>
         <!-- <a href="./Connexion.php"> Connectez-vous ! </a> -->
         <br> <hr>
-        <span>
+        <span><button id="return">
                 <a href="./index.html">Retour à l'accueil</a>
-            </span>
+        </button></span>
     </div>
 </div>
 

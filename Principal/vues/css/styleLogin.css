@@ -1,11 +1,13 @@
 body{
     background: linear-gradient(90deg, rgba(244,68,115,0.5) 0%, rgba(235,156,41,0.5) 75%);
+    color: black;
 }
 
 a{
     text-decoration: none;
     color: black;
 }
+
 
 .connect{
     box-sizing: border-box;
@@ -29,12 +31,8 @@ a{
 
 }
 
-.form-co-ins .btn-link {
-    border-radius: 10px;
-    background-color: white;
-    color: black;
-    margin: auto;
-}
+
+
 
 .Hdl{
     font-size: larger;
@@ -134,11 +132,33 @@ a{
 
 .disnone{
     display: none;
+
 }
 
 .startcenter{
     display: inline-block;
     text-align: left;
+}
+
+#recherche{
+    border: 0;
+    border-bottom: 1px solid;
+    padding: 6px 0;
+    display: block;
+    width: 60%;
+}
+
+#search{
+    background-color: #F29F05;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 25px;
+}
+
+#search:hover{
+    background-color: #F25E5E;
+    transition: 0.5s;
 }
 
 #input-ami{
@@ -149,10 +169,14 @@ a{
     width: 100%;
 }
 
+
+
 .btn-ami{
     background-color: #F29F05;
+    border: 1px solid black;
+    border-radius: 5px;
     width: 200px;
-    height: 50px;
+    height: 25px;
 }
 
 .btn-ami:hover{
@@ -160,11 +184,33 @@ a{
     transition: 0.5s;
 }
 
+.form-co-ins .btn-link {
+    border-radius: 10px;
+    background-color: #F29F05;
+    width: 282.17px;
+    height: 38px;
+    color: black;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.form-co-ins .btn-link:hover {
+    background-color: #F25E5E;
+    transition: 0.5s;
+    border: 1px solid black;
+}
+
 #return{
     background-color: #F29F05;
-    width: 200px;
-    height: 50px;
+    border-radius: 10px;
+    width: 282.17px;
+    height: 38px;
     border: 1px solid black;
+}
+
+#return a{
+    color: black;
+    text-decoration: none;
 }
 
 #return:hover{
@@ -174,20 +220,11 @@ a{
     color: black;
 }
 
-#inscrire{
-    background-color: #F29F05;
-    border: 1px solid black;
-}
-
-#inscrire:hover{
-    background-color: #F25E5E;
-    transition: 0.5s;
-    border: 1px solid black;
-}
 
 #connecter{
     background-color: #F29F05;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 #connecter:hover{
@@ -197,13 +234,24 @@ a{
 }
 
 #voir{
-    background-color: #F29F05;
-    border: 1px solid #F29F05;
-    color : black;
+    background-color:#F25E5E ;
+    border: 1px solid black;
+    width: 150px;
+    height: 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    color:black;
 }
 
+
 #voir:hover{
-    background-color: #F25E5E;
+    background-color: #F29F05;
     transition: 0.5s;
-    border: 1px solid #F25E5E;
+    border: 1px solid black;
 }
+
+#text-ami{
+    font-style: italic;
+    color: black;
+}
+

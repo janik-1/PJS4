@@ -63,8 +63,8 @@
                 </div>
             </div>
         </div>
-        <!-- end header inner -->
     </div>
+    <!-- end header inner -->
 </header>
 <div class="contenu container">
     <div class="row">
@@ -73,7 +73,7 @@
     <div class="row pl-5">
         <form name="x" action="./index.php?controle=espaceInscrit&action=InvitAmi" method="post">
             Ajoutez un ami avec son adresse mail : <br>
-            <input id="input-ami" type="text" name="mailAmi" value="" placeholder="Saisisez son adresse mail ici" >
+            <input id="input-ami" type="text" name="mailAmi" value="" placeholder="Saisissez son adresse mail ici" >
             <br>
             <button class="btn-ami" type="submit" class="btn-link nav-link">Ajouter cet ami</button>
         </form>
@@ -98,7 +98,7 @@
         echo($row2["nom"]);
         echo("<form action='./index.php?controle=carte&action=carteAmi' method='post' class='pl-2'>
                         <input class='disnone' type='text' name='idami' value= ".  ($row2['ami1']) . " readonly>  
-                        <input class='disnone' type='text' name='nomami' value= ".  ($row2['nom']) . " readonly>
+                        <input class='disnone' id='text-ami' type='text' name='nomami' value= ".  ($row2['nom']) . " readonly>
                         <button type='submit' id='voir' class='btn-link btnamis'>Voir sa carte</button>
                         </form>");
         echo("<br> </div>");
@@ -117,58 +117,59 @@
         echo(" ");
 
         echo("<form action='./index.php?controle=espaceInscrit&action=accepterDem' method='post' class='pl-2'>
-                        <input class='disnone' type='text' name='idami' value= ".  ($row['ami1']) . " readonly>  
-                        <button name='acceptation' type='submit' class='btn-link'>Accepter</button>
-                        <button name='refus' type='submit' class='btn-link'>Refuser</button>
+                        <input class='disnone' id='text-ami' type='text' name='idami' value= ".  ($row['ami1']) . " readonly>  
+                        <button id='voir' name='acceptation' type='submit' class='btn-link'>Accepter</button>
+                        <button id='voir' name='refus' type='submit' class='btn-link'>Refuser</button>
                     </form>");
         echo("<br> </div>");
     endwhile;
     ?>
 </div>
-<footr>
+
+</div>
+<div id="scroll_to_top">
+    <a href="#top"><img src="image/scroll.png" alt="Retourner en haut" /></a>
+</div>
+
+<footer>
     <div class="footer pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12 width">
+                <div class="col-lg-4 col-md-6 col-sm-12 width">
                     <div class="address">
                         <h3>Adresse</h3>
-                        <i><img src="icon/3.png">149 Avenue de Versailles, 75016 Paris</i>
+                        <p><img src="icon/3.png">143 Avenue de Versailles, 75016 Paris</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-12 width">
+                <div class="col-lg-4 col-md-6 col-sm-12 width">
                     <div class="address">
-                        <h3>Menus</h3>
-                        <i><img src="icon/2.png">Locations</i>
+                        <h3>Menu</h3>
+                        <p><a href="./blog.html">Blog</a></p>
+                        <p><a href="./equipe.html">A propos</a></p>
+                        <p><a href="./aide.html">Aide & Contact</a></p>
+                        <p><a href="#">Connexion</a></p>
+                        <p><a href="#">Inscription</a></p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-12 width">
-                    <div class="address">
-                        <h3>Liens Utiles</h3>
-                        <i><img src="icon/1.png">Locations</i>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-12 width">
+                <div class="col-lg-4 col-md-6 col-sm-12 width">
                     <div class="address">
                         <h3>Réseaux Sociaux </h3>
-                        <ul class="contant_icon">
-                            <li><img src="icon/fb.png" alt="icon"/></li>
-                            <li><img src="icon/tw.png" alt="icon"/></li>
-                            <li><img src="icon/lin (2).png" alt="icon"/></li>
-                            <li><img src="icon/instagram.png" alt="icon"/></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 width">
-                    <div class="address">
-                        <h3>Newsletter </h3>
-                        <input class="form-control" placeholder="Entrez votre mail" type="type" name="Enter your email">
-                        <button class="submit-btn">S'inscrire</button>
+                        <div class="contant_icon">
+                            <!--<li><img src="icon/fb.png" alt="icon"/></li>-->
+                            <p><a href="https://twitter.com/Miap09882942"><img src="icon/tw.png" alt="icon"/></a>
+                                @MiapO9882942</p>
+                            <br>
+                            <!--<li><img src="icon/lin (2).png" alt="icon"/></li>-->
+                            <p><a href="https://www.instagram.com/miapies_world/"><img src="icon/instagram.png" alt="icon"/></a>
+                                @miapies_world</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</footr>
+</footer>
+
 <!-- Javascript files-->
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>

@@ -21,17 +21,17 @@
         <form action="index.php?controle=connexion&action=reqmodele" method="post">
             </br>
             Adresse E-mail     <br/>
-            <input 	name="mail" 	type="text"
-                      value= " " />
+            <input  name="mail"     type="text"
+                    value= " " />
             <br/><br/>
-            Mot de passe	<br/>
-            <input 	type="password" 	name="mdp"
-                      value= " " />             <br/><br/>
+            Mot de passe    <br/>
+            <input  type="password"     name="mdp"
+                    value= " " />             <br/><br/>
             <input id="connecter" type= "submit"  value="Connexion" >
         </form> <br>
         <?php
         if($errco==1){
-            echo("Votre identifiant ou mot de passe est incorect. <br>");
+            echo("Votre identifiant ou mot de passe est incorrect. <br>");
         }
         ?>
         <hr>

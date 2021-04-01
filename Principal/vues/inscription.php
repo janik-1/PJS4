@@ -29,7 +29,7 @@
             Mot de passe (6 caractères minimum)<br/>
             <input 	type="password" 	name="mdp"
                       value= " " />             <br/><br/>
-            <input id="inscrire" type= "submit"  value="S'inscrire" >
+            <input id="connecter" type= "submit"  value="S'inscrire" >
         </form> <br>
         <?php
         if($errins==1){

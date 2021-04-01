@@ -17,54 +17,60 @@
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
 </head>
 <body class="main-layout">
-   <header>
-      <!-- header inner -->
-      <div class="header">
-         <div class="container">
+<header>
+    <!-- header inner -->
+    <div class="header">
+        <div class="container">
             <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                  <div class="full">
-                     <div class="center-desk">
-                        <div class="logo"> <a href="index.html"><img src="./image/miap_fond.png" alt="Logo" class="img-fluid" id=logo></a></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                  <div class="menu-area">
-                     <div class="limit-box">
-                        <nav class="main-menu">
-                           <ul class="menu-area-main">
-                              <li> <a href="./blog.html"> Blog</a> </li>
-                              <li> <a href="./equipe.html">L'équipe</a> </li>
-                              <li> <a href="./aide.html">Contactez-nous</a> </li>
-                              <li>
-                                 <form name="x" action="./index.php?controle=connexion&action=connexion" method="post">
-                                    <button id="connect" type="submit" class="btn-link nav-link">Se Connecter</button>
-                                 </form>                    
-                              </li>
-                              <li>
-                                 <form name="x" action="./index.php?controle=inscription&action=affins" method="post">
-                                    <button id="login" type="submit" class="btn-link nav-link">Inscription</button>
-                                 </form> 
-                              </li>                               
-                              <li>                                 
-                              </li>
-                           </ul>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo"> <a href="index.html"><img src="./image/miap_fond.png" alt="Logo" class="img-fluid" id="logo"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu">
+                                <ul class="menu-area-main">
+                                    <li> <a href="./equipe.html">A propos</a>
+                                        <ul class="menu-area-main">
+                                            <li>Présentation du projet</li>
+                                            <li>Notre équipe</li>
+                                        </ul>
+                                    </li>
+                                    <li> <a href="./blog.html"> Blog</a> </li>
+                                    <li> <a href="./aide.html">Aide & Contact</a> </li>
+                                    <li>
+                                        <form name="x" action="./index.php?controle=connexion&action=connexion" method="post">
+                                            <button type="submit" class="btn-link nav-link">Se Connecter</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form name="x" action="./index.php?controle=inscription&action=affins" method="post">
+                                            <button id="login" type="submit" class="btn-link nav-link">Inscription</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- end header inner --> 
-   </header>
+        </div>
+    </div>
+    <!-- end header inner -->
+</header>
+
     <div id="aide" class="aide">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h3>Questions fréquentes</h3>
+                        <h3>Questions <br> fréquentes</h3>
                     </div>
                 </div>
             </div>
@@ -148,7 +154,7 @@
             <div class="row">
               <div class="col-md-12">
                  <div class="titlepage">
-                    <h3>Besoin d'aide ?</h3>
+                    <h3>Besoin <br> d'aide ?</h3>
                  </div>
               </div>
             </div>
@@ -179,50 +185,49 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer pb-5">
+
+   <div id="scroll_to_top">
+       <a href="#top"><img src="image/scroll.png" alt="Retourner en haut" /></a>
+   </div>
+
+   <footer>
+       <div class="footer pb-5">
            <div class="container">
-              <div class="row">
-                 <div class="col-lg-3 col-md-6 col-sm-12 width">
-                    <div class="address">
-                       <h3>Adresse</h3>
-                       <i><img src="icon/3.png">143 Avenue de Versailles, 75016 Paris</i>                        
-                    </div>
-                 </div>
-                 <div class="col-lg-2 col-md-6 col-sm-12 width">
-                    <div class="address">
-                       <h3>Menus</h3>
-                       <i><img src="icon/2.png">Locations</i>
-                    </div>
-                 </div>
-                 <div class="col-lg-2 col-md-6 col-sm-12 width">
-                    <div class="address">
-                       <h3>Liens Utiles</h3>
-                       <i><img src="icon/1.png">Locations</i>
-                    </div>
-                 </div>
-                 <div class="col-lg-2 col-md-6 col-sm-12 width">
-                    <div class="address">
-                       <h3>Réseaux Sociaux </h3>
-                       <ul class="contant_icon">
-                          <!--<li><img src="icon/fb.png" alt="icon"/></li>-->
-                          <li><a href="https://twitter.com/Miap09882942"><img src="icon/tw.png" alt="icon"/></a></li>
-                          <!--<li><img src="icon/lin (2).png" alt="icon"/></li>-->
-                          <li><a href="https://www.instagram.com/miapies_world/"><img src="icon/instagram.png" alt="icon"/></a></li>
-                       </ul>
-                    </div>
-                 </div>
-                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 width">
-                    <div class="address">
-                       <h3>Newsletter </h3>
-                       <input class="form-control" placeholder="Entrez votre mail" type="type" name="Enter your email">
-                       <button class="submit-btn">S'inscrire</button>
-                    </div>
-                 </div>
-              </div>
+               <div class="row">
+                   <div class="col-lg-4 col-md-6 col-sm-12 width">
+                       <div class="address">
+                           <h3>Adresse</h3>
+                           <p><img src="icon/3.png">143 Avenue de Versailles, 75016 Paris</p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 col-sm-12 width">
+                       <div class="address">
+                           <h3>Menu</h3>
+                           <p><a href="./blog.html">Blog</a></p>
+                           <p><a href="./equipe.html">A propos</a></p>
+                           <p><a href="./aide.html">Aide & Contact</a></p>
+                           <p><a href="#">Connexion</a></p>
+                           <p><a href="#">Inscription</a></p>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6 col-sm-12 width">
+                       <div class="address">
+                           <h3>Réseaux Sociaux </h3>
+                           <div class="contant_icon">
+                               <!--<li><img src="icon/fb.png" alt="icon"/></li>-->
+                               <p><a href="https://twitter.com/Miap09882942"><img src="icon/tw.png" alt="icon"/></a>
+                                   @MiapO9882942</p>
+                               <br>
+                               <!--<li><img src="icon/lin (2).png" alt="icon"/></li>-->
+                               <p><a href="https://www.instagram.com/miapies_world/"><img src="icon/instagram.png" alt="icon"/></a>
+                                   @miapies_world</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
            </div>
-        </div>
-     </footer>
+       </div>
+   </footer>
            <!-- Javascript files--> 
            <script src="js/jquery.min.js"></script> 
            <script src="js/popper.min.js"></script> 

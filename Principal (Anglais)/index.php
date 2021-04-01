@@ -1,19 +1,19 @@
 <?php 
 
-//hypothèse 2 paramètres d'entrée, controle et action, avec l'url de index.php
-// exemple : index.php?controle=c1&action=a12
+//hypothesis 2 entry parameters, control and action, with the url of index.php
+// example : index.php?controle=c1&action=a12
 
 if (isset($_GET['controle']) & isset($_GET['action'])) {
  	$controle = $_GET['controle'];
 	$action= $_GET['action'];
 	}
-else {  // absence de paramètres : prévoir des valeurs par défaut
+else {  // absence of parameters plan default values
 	$controle = "accueil";
-    $action= "af"; // Lance la page d'accueil sans aucun service 
+    $action= "af"; // launches the home page without any service
 }
 
-//inclure le fichier php de contrôle 
-//et lancer la fonction-action issue de ce fichier.	
+//includes the controlling php file
+//and launches the function-action issued from this file
 	//require ('./controleurs/accueil.php');
     require ('./controleurs/' . $controle . '.php');   
 	$action (); 

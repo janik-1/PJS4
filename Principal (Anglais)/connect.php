@@ -1,7 +1,7 @@
 <?php
-	$hostname = "localhost";	//ou localhost
+	$hostname = "localhost";	//or localhost
 	$base= "miap_bdd";
-	$loginBD= "root";	//ou "root"
+	$loginBD= "root";	//or "root"
 	$passBD="root";
 	//$pdo = null;
 
@@ -11,5 +11,5 @@ try {
 }
 
 catch (PDOException $e) {
-	die  ("Echec de connexion : " . $e->getMessage() . "\n");
+	die  ("Log in failure : " . $e->getMessage() . "\n");
 }

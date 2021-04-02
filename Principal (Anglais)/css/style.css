@@ -428,9 +428,14 @@ a.readmore_bt {
 }
 
 nav.main-menu {
-	float: right;
+	float: left;
 	margin-top:35px;
 	margin-left: 0;
+}
+
+.bi{
+	width:25px;
+	height:25px;
 }
 
 .menu-area-main li:hover a,
@@ -510,7 +515,7 @@ nav.main-menu {
 }
 
 .main-menu ul>li a {
-	padding: 6px 30px 0 30px;
+	padding: 6px 25px 0 25px;
 	line-height: 20px;
 	font-size: 16px;
 	display: block;
@@ -817,7 +822,7 @@ nav.main-menu {
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #fff;
-	line-height: 40px;
+	line-height: 20px;
 }
 
 .relative {
@@ -1444,4 +1449,12 @@ ul.contant_icon li img {
 .main-menu ul>li>form>button:hover{
 	color:#D93672;
 	transition: 0.5s;
+}
+
+.first-slide{
+	width: 100%;
+}
+
+#onglet{
+	height: 250px;
 }

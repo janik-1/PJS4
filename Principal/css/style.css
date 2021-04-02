@@ -1450,3 +1450,11 @@ ul.contant_icon li img {
 	color:#D93672;
 	transition: 0.5s;
 }
+
+.first-slide{
+	width: 100%;
+}
+
+#onglet{
+	height: 250px;
+}
